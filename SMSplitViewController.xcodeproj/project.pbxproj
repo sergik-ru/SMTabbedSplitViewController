@@ -20,6 +20,7 @@
 		41A8B3B018AF81A70095B154 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41A8B3AE18AF81A70095B154 /* InfoPlist.strings */; };
 		41A8B3B218AF81A70095B154 /* SMSplitViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3B118AF81A70095B154 /* SMSplitViewControllerTests.m */; };
 		41A8B3BD18AF82330095B154 /* SMSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3BC18AF82330095B154 /* SMSplitViewController.m */; };
+		41A8B3C118AF82B90095B154 /* SMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3C018AF82B90095B154 /* SMTabBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		41A8B3B118AF81A70095B154 /* SMSplitViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMSplitViewControllerTests.m; sourceTree = "<group>"; };
 		41A8B3BB18AF82330095B154 /* SMSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSplitViewController.h; sourceTree = "<group>"; };
 		41A8B3BC18AF82330095B154 /* SMSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSplitViewController.m; sourceTree = "<group>"; };
+		41A8B3BF18AF82B90095B154 /* SMTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTabBar.h; sourceTree = "<group>"; };
+		41A8B3C018AF82B90095B154 /* SMTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTabBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,7 @@
 				41A8B39C18AF81A70095B154 /* SMAppDelegate.m */,
 				41A8B3BB18AF82330095B154 /* SMSplitViewController.h */,
 				41A8B3BC18AF82330095B154 /* SMSplitViewController.m */,
+				41A8B3BE18AF827F0095B154 /* SplitSubVC */,
 				41A8B39E18AF81A70095B154 /* Images.xcassets */,
 				41A8B39318AF81A70095B154 /* Supporting Files */,
 			);
@@ -147,6 +151,15 @@
 				41A8B3AE18AF81A70095B154 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		41A8B3BE18AF827F0095B154 /* SplitSubVC */ = {
+			isa = PBXGroup;
+			children = (
+				41A8B3BF18AF82B90095B154 /* SMTabBar.h */,
+				41A8B3C018AF82B90095B154 /* SMTabBar.m */,
+			);
+			name = SplitSubVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41A8B39D18AF81A70095B154 /* SMAppDelegate.m in Sources */,
+				41A8B3C118AF82B90095B154 /* SMTabBar.m in Sources */,
 				41A8B3BD18AF82330095B154 /* SMSplitViewController.m in Sources */,
 				41A8B39918AF81A70095B154 /* main.m in Sources */,
 			);
