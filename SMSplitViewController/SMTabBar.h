@@ -8,6 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SMTabBarDelegate;
+
 @interface SMTabBar : UIViewController
+
+@property (nonatomic, assign) NSInteger *selectedTab;
+@property (nonatomic, assign) UIImage *background;
+@property (nonatomic, assign) NSArray *tabsButtons;
+@property (nonatomic, assign) NSArray *actionsButtons;
+@property (nonatomic, weak) id<SMTabBarDelegate> delegate;
+
+
+- (id)initTabBar:(NSArray *)tabs andActions:(NSArray *)actions;
+
+@end
+
+@protocol SMTabBarDelegate <NSObject>
+
+@required
+
+- (void)initTabBar:(SMTabBar *)tabBar selectedViewController:(UIViewController *)vc;
 
 @end

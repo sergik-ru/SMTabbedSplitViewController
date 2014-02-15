@@ -15,4 +15,28 @@
 @implementation SMTabBar
 
 
+- (id)init {
+    
+    return [self initTabBar:[NSArray array] andActions:[NSArray array]];
+}
+
+- (id)initTabBar:(NSArray *)tabs andActions:(NSArray *)actions {
+    
+    self = [self init];
+    
+    if (self) {
+        
+        _tabsButtons = [NSArray arrayWithArray:tabs];
+        _actionsButtons = [NSArray arrayWithArray:actions];
+    }
+    
+    return self;
+}
+
+- (void)setTabsButtons:(NSArray *)tabsButtons {
+    
+    
+}
+
+
 @end
