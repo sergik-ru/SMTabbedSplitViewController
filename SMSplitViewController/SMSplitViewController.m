@@ -8,6 +8,7 @@
 
 #import "SMSplitViewController.h"
 #import "SMTabBar.h"
+#import "SMTabBarItem.h"
 
 @interface SMSplitViewController ()
 {
@@ -24,7 +25,15 @@
     
     [super loadView];
     
-    _tabBar = [[SMTabBar alloc] initTabBar:@[@"1",@"2",@"3"] andActions:@[@"1",@"2"]];
+    SMTabBarItem *tab = [[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@""] andTitle:@"tab 1"];
+    SMTabBarItem *tab2 = [[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@""] andTitle:@"tab 2"];
+    SMTabBarItem *tab3 = [[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@""] andTitle:@"tab 3"];
+    SMTabBarItem *tab4 = [[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@""] andTitle:@"tab 4"];
+    
+    SMTabBarItem *action = [[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@""] andTitle:@"act 1"];
+    SMTabBarItem *action2 = [[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@""] andTitle:@"act 2"];
+    
+    _tabBar = [[SMTabBar alloc] initTabBar:@[tab, tab2, tab3, tab4] andActions:@[action, action2]];
     [self.view addSubview:_tabBar.view];
 }
 

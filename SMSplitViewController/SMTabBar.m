@@ -133,18 +133,26 @@
 {
     SMTabBarItemCell *cell = [[[SMTabBarItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil] autorelease];
     
+    SMTabBarItem *tabItem = nil;
+    
     if (tableView == _tabsTable) {
         
-    
-        SMTabBarItem *tabItem = [_tabsButtons objectAtIndex:indexPath.row];
-    
-        cell.imageView.image = tabItem.image;
-        cell.titleLabel.text = tabItem.title;
+        tabItem = [_tabsButtons objectAtIndex:indexPath.row];
         
-        cell.backgroundColor = tableView == _tabsTable ? [UIColor redColor] : [UIColor blueColor];
+        cell.backgroundColor = [UIColor redColor];
         
     }
+    else if (tableView == _actionsTable) {
+        
+        tabItem = [_actionsButtons objectAtIndex:indexPath.row];
+        
+        cell.backgroundColor = [UIColor greenColor];
+    }
+    
+    cell.iconView.image = tabItem.image;
+    cell.titleLabel.text = tabItem.title;
     cell.frame = CGRectMake(0, 0, tabBarWidth, 70);
+    
     return cell;
 }
 

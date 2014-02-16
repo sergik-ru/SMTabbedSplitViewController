@@ -11,7 +11,7 @@
 @interface SMTabBarItemCell : UITableViewCell
 
 @property (nonatomic, copy) UILabel *titleLabel;
-@property (nonatomic, assign) UIImageView *imageView;
+@property (nonatomic, assign) UIImageView *iconView;
 @property (nonatomic, assign) UIImage *selecteImage;
 @property (nonatomic, assign) UIImage *unselectedImage;
 

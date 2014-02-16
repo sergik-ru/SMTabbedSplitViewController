@@ -15,4 +15,6 @@
 @property (nonatomic, assign) UIImage *selectedImage;
 @property (nonatomic, assign) UIImage *unselectedImage;
 
+- (id)initWithImage:(UIImage *)image andTitle:(NSString *)title;
+
 @end

@@ -16,10 +16,10 @@
     if (self) {
         
         self.backgroundColor = [UIColor clearColor];
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        //self.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        self.imageView = [[[UIImageView alloc] init] autorelease];
-        [self addSubview:self.imageView];
+        _iconView = [[[UIImageView alloc] init] autorelease];
+        [self addSubview:_iconView];
         
         _titleLabel = [[[UILabel alloc] init] autorelease];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -34,8 +34,8 @@
     
     [super layoutSubviews];
     
-    self.imageView.frame = CGRectMake(0, 0, 70, 70);
-    self.titleLabel.frame = CGRectMake(0, CGRectGetMaxY(self.imageView.frame), self.bounds.size.height, 11);
+    _iconView.frame = CGRectMake(0, 0, 70, 70);
+    _titleLabel.frame = CGRectMake(0, CGRectGetMaxY(_iconView.frame), self.bounds.size.height, 11);
 }
 
 @end
