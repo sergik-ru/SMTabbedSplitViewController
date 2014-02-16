@@ -12,7 +12,6 @@
 #import "SMMasterViewController.h"
 #import "SMDetailViewController.h"
 
-#define iOS_7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
 
 @interface SMSplitViewController ()
 {
@@ -30,17 +29,7 @@
     
     if (self) {
         
-        SMTabBarItem *tab = [[[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"Evernote"] andTitle:@"Evernote"] autorelease];
-        SMTabBarItem *tab2 = [[[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"Facebook"] andTitle:@"Facebook"] autorelease];
-        SMTabBarItem *tab3 = [[[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"Google+"] andTitle:@"Google+"] autorelease];
-        SMTabBarItem *tab4 = [[[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"Instagram"] andTitle:@"Instagram"] autorelease];
-        SMTabBarItem *tab5 = [[[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"LastFM"] andTitle:@"LastFM"] autorelease];
-        SMTabBarItem *tab6 = [[[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"Reddit"] andTitle:@"Reddit"] autorelease];
-        
-        SMTabBarItem *action = [[[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"Twitter"] andTitle:@"Twitter"] autorelease];
-        SMTabBarItem *action2 = [[[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"Skype"] andTitle:@"Skype"] autorelease];
-        
-        _tabBar = [[SMTabBar alloc] initTabBar:@[tab, tab2, tab3, tab4, tab5, tab6] andActions:@[action, action2]];
+        _tabBar = [[SMTabBar alloc] init];
         _masterVC = [[SMMasterViewController alloc] init];
         _detailVC = [[SMDetailViewController alloc] init];
     }
@@ -55,6 +44,7 @@
     [super loadView];
     
     self.view.backgroundColor = [UIColor clearColor];
+    
     [self.view addSubview:_tabBar.view];
     [self.view addSubview:_masterVC.view];
     [self.view addSubview:_detailVC.view];
@@ -82,6 +72,18 @@
     _tabBar.view.backgroundColor = background;
     _masterVC.view.backgroundColor = background;
     _detailVC.view.backgroundColor = background;    
+}
+
+- (void)setTabsViewControllers:(NSArray *)tabsViewControllers {
+    
+    _tabsViewControllers = tabsViewControllers;
+    _tabBar.tabsButtons = _tabsViewControllers;
+}
+
+- (void)setActionsTabs:(NSArray *)actionsTabs {
+
+    _actionsTabs = actionsTabs;
+    _tabBar.actionsButtons = _actionsTabs;
 }
 
 #pragma mark -

@@ -29,20 +29,12 @@
 
 - (id)init {
     
-    return [self initTabBar:@[] andActions:@[]];
-}
-
-- (id)initTabBar:(NSArray *)tabs andActions:(NSArray *)actions {
-
     self = [super init];
     
     if (self) {
         
-        self.view.backgroundColor = [UIColor blackColor];
+        self.view.backgroundColor = [UIColor clearColor];
         self.view.clipsToBounds = YES;
-        
-        [self tabsInit:tabs];
-        [self actionsInit:actions];
     }
     
     return self;
@@ -151,7 +143,12 @@
 
 - (void)setTabsButtons:(NSArray *)tabsButtons {
     
+    [self tabsInit:tabsButtons];
+}
+
+- (void)setActionsButtons:(NSArray *)actionsButtons {
     
+    [self actionsInit:actionsButtons];
 }
 
 #pragma mark -

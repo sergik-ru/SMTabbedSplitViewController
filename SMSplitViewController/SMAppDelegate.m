@@ -8,6 +8,7 @@
 
 #import "SMAppDelegate.h"
 #import "SMSplitViewController.h"
+#import "SMTabBarItem.h"
 
 @implementation SMAppDelegate
 
@@ -16,6 +17,20 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     
     SMSplitViewController *split = [[[SMSplitViewController alloc] init] autorelease];
+    
+    SMTabBarItem *tab = [[[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"Evernote"] andTitle:@"Evernote"] autorelease];
+    SMTabBarItem *tab2 = [[[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"Facebook"] andTitle:@"Facebook"] autorelease];
+    SMTabBarItem *tab3 = [[[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"Google+"] andTitle:@"Google+"] autorelease];
+    SMTabBarItem *tab4 = [[[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"Instagram"] andTitle:@"Instagram"] autorelease];
+    SMTabBarItem *tab5 = [[[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"LastFM"] andTitle:@"LastFM"] autorelease];
+    SMTabBarItem *tab6 = [[[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"Reddit"] andTitle:@"Reddit"] autorelease];
+    
+    SMTabBarItem *action = [[[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"Twitter"] andTitle:@"Twitter"] autorelease];
+    SMTabBarItem *action2 = [[[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"Skype"] andTitle:@"Skype"] autorelease];
+    
+    split.tabsViewControllers = @[tab, tab2, tab3, tab4, tab5, tab6];
+    split.actionsTabs = @[action, action2];
+    
     split.background = [UIColor whiteColor];
     self.window.rootViewController = split;
     

@@ -20,14 +20,13 @@
 @property (nonatomic, copy) UITableView *tabsTable;
 @property (nonatomic, copy) UITableView *actionsTable;
 
-- (id)initTabBar:(NSArray *)tabs andActions:(NSArray *)actions;
-
 @end
 
 @protocol SMTabBarDelegate <NSObject>
 
 @required
 
-- (void)initTabBar:(SMTabBar *)tabBar selectedViewController:(UIViewController *)vc;
+- (void)tabBar:(SMTabBar *)tabBar selectedViewController:(UIViewController *)vc;
+- (void)tabBar:(SMTabBar *)tabBar selectedAction:(NSInteger *)index;
 
 @end

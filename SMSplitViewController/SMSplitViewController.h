@@ -11,5 +11,7 @@
 @interface SMSplitViewController : UIViewController
 
 @property (nonatomic, assign) UIColor *background;
+@property (nonatomic, assign) NSArray *tabsViewControllers;
+@property (nonatomic, assign) NSArray *actionsTabs;
 
 @end
