@@ -39,6 +39,7 @@
     if (self) {
         
         self.view.backgroundColor = [UIColor blackColor];
+        self.view.clipsToBounds = YES;
         
         [self tabsInit:tabs];
         [self actionsInit:actions];

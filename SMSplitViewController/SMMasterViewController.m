@@ -8,7 +8,11 @@
 
 #import "SMMasterViewController.h"
 
+#define masterVCFrame CGRectMake(70, 0, 320, self.view.bounds.size.height)
+
 @interface SMMasterViewController ()
+
+@property (nonatomic) CGRect masterFrame;
 
 @end
 
@@ -19,7 +23,7 @@
 
 - (id)init {
     
-    return [self initWithFrame:CGRectMake(70, 0, 320, self.view.bounds.size.height)];
+    return [self initWithFrame:masterVCFrame];
 }
 
 - (id)initWithFrame:(CGRect)frame {
@@ -29,7 +33,8 @@
     if (self) {
         
         self.view.frame = frame;
-        self.view.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
+        self.view.clipsToBounds = YES;
+        self.view.layer.cornerRadius = 7;
     }
     
     return self;
@@ -42,7 +47,6 @@
     
     [super loadView];
     
-    //self.view = _viewController.view;
     self.view.backgroundColor = [UIColor redColor];
 }
 
@@ -50,7 +54,10 @@
     
     [super viewWillLayoutSubviews];
     
+    CGRect frame = masterVCFrame;
+    frame.size.width -= (UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) ? 0 : 10;
     
+    self.view.frame = frame;
 }
 
 @end

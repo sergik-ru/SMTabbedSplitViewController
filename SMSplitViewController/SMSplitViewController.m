@@ -40,15 +40,13 @@
     _tabBar = [[SMTabBar alloc] initTabBar:@[tab, tab2, tab3, tab4, tab5, tab6] andActions:@[action, action2]];
     [self.view addSubview:_tabBar.view];
     
-    _masterVC = [[SMMasterViewController alloc] initWithFrame:CGRectMake(70, 0, 320, self.view.bounds.size.height)];
+    _masterVC = [[SMMasterViewController alloc] init];
     [self.view addSubview:_masterVC.view];
 }
 
 - (void)viewWillLayoutSubviews {
     
     [super viewWillLayoutSubviews];
-    
-    [_tabBar.view setNeedsLayout];
 }
 
 - (void)dealloc {
