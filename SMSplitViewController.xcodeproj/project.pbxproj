@@ -24,6 +24,7 @@
 		41A8B3C418AF94980095B154 /* SMTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3C318AF94980095B154 /* SMTabBarItem.m */; };
 		41A8B3C718B0DC5D0095B154 /* SMTabBarItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3C618B0DC5D0095B154 /* SMTabBarItemCell.m */; };
 		41A8B3CD18B11A4F0095B154 /* SMMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3CC18B11A4F0095B154 /* SMMasterViewController.m */; };
+		41A8B3D118B12C270095B154 /* SMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3D018B12C270095B154 /* SMDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		41A8B3C618B0DC5D0095B154 /* SMTabBarItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTabBarItemCell.m; sourceTree = "<group>"; };
 		41A8B3CB18B11A4F0095B154 /* SMMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMMasterViewController.h; sourceTree = "<group>"; };
 		41A8B3CC18B11A4F0095B154 /* SMMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMMasterViewController.m; sourceTree = "<group>"; };
+		41A8B3CF18B12C270095B154 /* SMDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMDetailViewController.h; sourceTree = "<group>"; };
+		41A8B3D018B12C270095B154 /* SMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +170,7 @@
 			children = (
 				41A8B3C818B0F4A50095B154 /* TabBar */,
 				41A8B3CA18B11A040095B154 /* MasterVC */,
+				41A8B3CE18B12BDB0095B154 /* DetailVC */,
 			);
 			name = SplitSubVC;
 			sourceTree = "<group>";
@@ -199,6 +203,15 @@
 				41A8B3CC18B11A4F0095B154 /* SMMasterViewController.m */,
 			);
 			name = MasterVC;
+			sourceTree = "<group>";
+		};
+		41A8B3CE18B12BDB0095B154 /* DetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				41A8B3CF18B12C270095B154 /* SMDetailViewController.h */,
+				41A8B3D018B12C270095B154 /* SMDetailViewController.m */,
+			);
+			name = DetailVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +315,7 @@
 				41A8B39D18AF81A70095B154 /* SMAppDelegate.m in Sources */,
 				41A8B3C118AF82B90095B154 /* SMTabBar.m in Sources */,
 				41A8B3BD18AF82330095B154 /* SMSplitViewController.m in Sources */,
+				41A8B3D118B12C270095B154 /* SMDetailViewController.m in Sources */,
 				41A8B3CD18B11A4F0095B154 /* SMMasterViewController.m in Sources */,
 				41A8B39918AF81A70095B154 /* main.m in Sources */,
 			);

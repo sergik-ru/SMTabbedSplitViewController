@@ -10,11 +10,16 @@
 #import "SMTabBar.h"
 #import "SMTabBarItem.h"
 #import "SMMasterViewController.h"
+#import "SMDetailViewController.h"
+
+#define iOS_7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+
 
 @interface SMSplitViewController ()
 {
     SMTabBar *_tabBar;
     SMMasterViewController *_masterVC;
+    SMDetailViewController *_detailVC;
 }
 @end
 
@@ -42,6 +47,9 @@
     
     _masterVC = [[SMMasterViewController alloc] init];
     [self.view addSubview:_masterVC.view];
+    
+    _detailVC = [[SMDetailViewController alloc] init];
+    [self.view addSubview:_detailVC.view];
 }
 
 - (void)viewWillLayoutSubviews {
@@ -53,6 +61,7 @@
     
     [_tabBar release];
     [_masterVC release];
+    [_detailVC release];
     
     [super dealloc];
 }
