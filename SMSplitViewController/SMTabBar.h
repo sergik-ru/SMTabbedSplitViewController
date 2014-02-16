@@ -11,10 +11,6 @@
 @protocol SMTabBarDelegate;
 
 @interface SMTabBar : UIViewController <UITableViewDelegate, UITableViewDataSource>
-{
-    CGRect _tabsButtonFrame;
-    CGRect _actionsButtonFrame;
-}
 
 @property (nonatomic, assign) NSInteger *selectedTab;
 @property (nonatomic, assign) UIImage *background;

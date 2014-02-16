@@ -10,8 +10,14 @@
 #import "SMTabBarItem.h"
 
 #define tabBarWidth 70
+#define tabsButtonsFrame CGRectMake(0, 0, tabBarWidth, _tabsButtonsHeight)
+#define actionButtonFrame CGRectMake(0, self.view.bounds.size.height - _tabsButtonsHeight, tabBarWidth, _actionsButtonsHeight)
 
 @implementation SMTabBar
+{
+    __block CGFloat _tabsButtonsHeight;
+    __block CGFloat _actionsButtonsHeight;
+}
 
 - (id)init {
     
@@ -38,6 +44,16 @@
     [super viewWillLayoutSubviews];
     
     self.view.frame = CGRectMake(0, 0, tabBarWidth, self.view.bounds.size.height);
+    
+    if (_tabsTable) {
+        
+        _tabsTable.frame = tabsButtonsFrame;
+    }
+    
+    if (_actionsTable) {
+        
+        _actionsTable.frame = actionButtonFrame;
+    }
 }
 
 - (BOOL)shouldAutorotate {
@@ -56,18 +72,14 @@
         
         _tabsButtons = [NSArray arrayWithArray:tabs];
         
-        __block CGFloat buttonsHeight = 0;
-        
         [_tabsButtons enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             
            // if ([obj isKindOfClass:[SMTabBarItem class]])
-                buttonsHeight += 115;
+                _tabsButtonsHeight += 50;
             
         }];
         
-        _tabsButtonFrame = CGRectMake(0, 0, tabBarWidth, buttonsHeight);
-        
-        _tabsTable = [[[UITableView alloc] initWithFrame:_tabsButtonFrame style:UITableViewStylePlain] autorelease];
+        _tabsTable = [[[UITableView alloc] initWithFrame:tabsButtonsFrame style:UITableViewStylePlain] autorelease];
         _tabsTable.scrollEnabled = NO;
         _tabsTable.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tabsTable.dataSource = self;
@@ -84,17 +96,15 @@
         
         _actionsButtons = [NSArray arrayWithArray:actions];
         
-        __block CGFloat buttonsHeight = 0;
-        
         [_actionsButtons enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             
           //  if ([obj isKindOfClass:[SMTabBarItem class]])
-                buttonsHeight += 115;
+                _actionsButtonsHeight += 50;
             
         }];
-
-        _actionsButtonFrame = CGRectMake(0, self.view.bounds.size.height - _tabsButtonFrame.size.height, tabBarWidth, buttonsHeight);
-        _actionsTable = [[[UITableView alloc] initWithFrame:_actionsButtonFrame style:UITableViewStylePlain] autorelease];
+        
+        
+        _actionsTable = [[[UITableView alloc] initWithFrame:actionButtonFrame style:UITableViewStylePlain] autorelease];
         _actionsTable.scrollEnabled = NO;
         _actionsTable.separatorStyle = UITableViewCellSeparatorStyleNone;
         _actionsTable.delegate = self;
@@ -113,6 +123,7 @@
     
 }
 
+#pragma mark -
 #pragma mark - UITableViewDataSource/Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -128,13 +139,13 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"] autorelease];
     
     cell.backgroundColor = tableView == _tabsTable ? [UIColor redColor] : [UIColor blueColor];
-    
+    cell.frame = CGRectMake(0, 0, tabBarWidth, 70);
     return cell;
 }
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//    
-//}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 @end
