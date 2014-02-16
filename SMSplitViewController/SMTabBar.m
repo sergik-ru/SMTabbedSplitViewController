@@ -14,12 +14,14 @@
 #define tabBarWidth 70
 #define tabHeight 60
 #define tabsButtonsFrame CGRectMake(0, 10 + iOS_7 * 20, tabBarWidth, _tabsButtonsHeight)
-#define actionButtonFrame CGRectMake(0, self.view.bounds.size.height - _actionsButtonsHeight + iOS_7 * 20 - tabHeight / 2, tabBarWidth, _actionsButtonsHeight)
+#define actionButtonFrame CGRectMake(0, self.view.bounds.size.height - _actionsButtonsHeight + iOS_7 * 20 - tabHeight / 2 * iOS_7 - 10 * !iOS_7, tabBarWidth, _actionsButtonsHeight)
 
 @implementation SMTabBar
 {
     __block CGFloat _tabsButtonsHeight;
     __block CGFloat _actionsButtonsHeight;
+    NSIndexPath *_selectedTab;
+    NSIndexPath *_selectedAction;
 }
 
 #pragma mark -
@@ -90,13 +92,15 @@
         }];
         
         _actionsTable = [[[UITableView alloc] initWithFrame:actionButtonFrame style:UITableViewStylePlain] autorelease];
+
+        
         _actionsTable.scrollEnabled = NO;
         _actionsTable.delegate = self;
         _actionsTable.dataSource = self;
         
         if (iOS_7) {
             
-            _tabsTable.separatorInset = UIEdgeInsetsZero;
+            _actionsTable.separatorInset = UIEdgeInsetsZero;
         }
 
         _actionsTable.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
@@ -105,6 +109,13 @@
         
         [self.view addSubview:_actionsTable];
     }
+}
+
+- (UIView *)tableHeaderSeparator {
+    
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 0.7)] ;
+    lineView.backgroundColor = [UIColor lightGrayColor];
+    return lineView;
 }
 
 #pragma mark -
@@ -127,6 +138,13 @@
     }
 }
 
+- (void)dealloc {
+    
+    [_selectedAction release];
+    [_selectedTab release];
+    
+    [super dealloc];
+}
 #pragma mark -
 #pragma mark - Properties
 
@@ -157,15 +175,10 @@
     if (tableView == _tabsTable) {
         
         tabItem = [_tabsButtons objectAtIndex:indexPath.row];
-        
-        cell.backgroundColor = [UIColor redColor];
-        
     }
     else if (tableView == _actionsTable) {
         
         tabItem = [_actionsButtons objectAtIndex:indexPath.row];
-        
-        cell.backgroundColor = [UIColor greenColor];
     }
     
     cell.iconView.image = tabItem.image;
@@ -176,7 +189,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (tableView == _tabsTable) {
+        
+        [_selectedTab autorelease], _selectedTab = indexPath.copy;
+        [_actionsTable deselectRowAtIndexPath:_selectedAction animated:NO];
+    } else {
+        
+        [_selectedAction autorelease], _selectedAction = indexPath.copy;
+        [_tabsTable deselectRowAtIndexPath:_selectedTab animated:NO];
+    }
+    
+
 }
 
 #pragma mark -

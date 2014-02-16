@@ -12,7 +12,7 @@
 
 @interface SMTabBar : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, assign) NSInteger *selectedTab;
+//@property (nonatomic, assign) NSInteger *selectedTab;
 @property (nonatomic, assign) UIImage *background;
 @property (nonatomic, assign) NSArray *tabsButtons;
 @property (nonatomic, assign) NSArray *actionsButtons;

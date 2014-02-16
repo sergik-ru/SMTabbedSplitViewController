@@ -13,6 +13,7 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
     if (self) {
         
         self.backgroundColor = [UIColor clearColor];
@@ -34,7 +35,7 @@
     [super layoutSubviews];
     
     _iconView.frame = CGRectMake(self.bounds.size.width / 2 - 36 / 2, 5, 36, 36);
-    _titleLabel.frame = CGRectMake(0, CGRectGetMaxY(_iconView.frame), self.bounds.size.width, 12);
+    _titleLabel.frame = CGRectMake(0, CGRectGetMaxY(_iconView.frame) + 2, self.bounds.size.width, 12);
 }
 
 @end

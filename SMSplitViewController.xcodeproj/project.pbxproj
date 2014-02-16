@@ -162,14 +162,30 @@
 		41A8B3BE18AF827F0095B154 /* SplitSubVC */ = {
 			isa = PBXGroup;
 			children = (
+				41A8B3C818B0F4A50095B154 /* TabBar */,
+			);
+			name = SplitSubVC;
+			sourceTree = "<group>";
+		};
+		41A8B3C818B0F4A50095B154 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
 				41A8B3BF18AF82B90095B154 /* SMTabBar.h */,
 				41A8B3C018AF82B90095B154 /* SMTabBar.m */,
+				41A8B3C918B0F4C10095B154 /* TabBarItem */,
+			);
+			name = TabBar;
+			sourceTree = "<group>";
+		};
+		41A8B3C918B0F4C10095B154 /* TabBarItem */ = {
+			isa = PBXGroup;
+			children = (
 				41A8B3C218AF94980095B154 /* SMTabBarItem.h */,
 				41A8B3C318AF94980095B154 /* SMTabBarItem.m */,
 				41A8B3C518B0DC5D0095B154 /* SMTabBarItemCell.h */,
 				41A8B3C618B0DC5D0095B154 /* SMTabBarItemCell.m */,
 			);
-			name = SplitSubVC;
+			name = TabBarItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
