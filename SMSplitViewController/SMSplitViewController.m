@@ -17,6 +17,9 @@
 
 @implementation SMSplitViewController
 
+#pragma mark -
+#pragma mark - ViewController Lifecycle
+
 - (void)loadView {
     
     [super loadView];
@@ -32,6 +35,16 @@
     [_tabBar.view setNeedsLayout];
 }
 
+- (void)dealloc {
+    
+    [_tabBar release];
+    
+    [super dealloc];
+}
+
+#pragma mark -
+#pragma mark - Autorotation
+
 - (BOOL)shouldAutorotate {
     
     return YES;
@@ -42,10 +55,4 @@
     return UIInterfaceOrientationMaskAll;
 }
 
-- (void)dealloc {
-    
-    [_tabBar release];
-    
-    [super dealloc];
-}
 @end

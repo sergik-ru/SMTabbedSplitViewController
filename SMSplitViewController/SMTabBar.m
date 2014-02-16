@@ -20,6 +20,9 @@
     __block CGFloat _actionsButtonsHeight;
 }
 
+#pragma mark -
+#pragma mark - Initialization
+
 - (id)init {
     
     return [self initTabBar:@[] andActions:@[]];
@@ -38,33 +41,6 @@
     }
     
     return self;
-}
-
-- (void)viewWillLayoutSubviews {
-    
-    [super viewWillLayoutSubviews];
-    
-    self.view.frame = CGRectMake(0, 0, tabBarWidth, self.view.bounds.size.height);
-    
-    if (_tabsTable) {
-        
-        _tabsTable.frame = tabsButtonsFrame;
-    }
-    
-    if (_actionsTable) {
-        
-        _actionsTable.frame = actionButtonFrame;
-    }
-}
-
-- (BOOL)shouldAutorotate {
-    
-    return YES;
-}
-
-- (NSUInteger)supportedInterfaceOrientations {
-    
-    return UIInterfaceOrientationMaskAll;
 }
 
 - (void)tabsInit:(NSArray *)tabs {
@@ -117,6 +93,26 @@
 }
 
 #pragma mark -
+#pragma mark - ViewController Lifecycle
+
+- (void)viewWillLayoutSubviews {
+    
+    [super viewWillLayoutSubviews];
+    
+    self.view.frame = CGRectMake(0, 0, tabBarWidth, self.view.bounds.size.height);
+    
+    if (_tabsTable) {
+        
+        _tabsTable.frame = tabsButtonsFrame;
+    }
+    
+    if (_actionsTable) {
+        
+        _actionsTable.frame = actionButtonFrame;
+    }
+}
+
+#pragma mark -
 #pragma mark - Properties
 
 - (void)setTabsButtons:(NSArray *)tabsButtons {
@@ -147,6 +143,19 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark -
+#pragma mark - Autototate iOS 6.0 +
+
+- (BOOL)shouldAutorotate {
+    
+    return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    
+    return UIInterfaceOrientationMaskAll;
 }
 
 @end
