@@ -16,7 +16,7 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     
     SMSplitViewController *split = [[[SMSplitViewController alloc] init] autorelease];
-    
+    split.background = [UIColor whiteColor];
     self.window.rootViewController = split;
     
     self.window.backgroundColor = [UIColor whiteColor];

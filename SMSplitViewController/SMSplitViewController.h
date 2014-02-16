@@ -10,4 +10,6 @@
 
 @interface SMSplitViewController : UIViewController
 
+@property (nonatomic, assign) UIColor *background;
+
 @end
