@@ -8,6 +8,7 @@
 
 #import "SMTabBar.h"
 #import "SMTabBarItem.h"
+#import "SMTabBarItemCell.h"
 
 #define iOS_7_STATUS_BAR (20 * ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0))
 #define tabBarWidth 70
@@ -130,12 +131,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
+    SMTabBarItemCell *cell = [[[SMTabBarItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil] autorelease];
     
-    if (!cell)
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"] autorelease];
+    if (tableView == _tabsTable) {
+        
     
-    cell.backgroundColor = tableView == _tabsTable ? [UIColor redColor] : [UIColor blueColor];
+        SMTabBarItem *tabItem = [_tabsButtons objectAtIndex:indexPath.row];
+    
+        cell.imageView.image = tabItem.image;
+        cell.titleLabel.text = tabItem.title;
+        
+        cell.backgroundColor = tableView == _tabsTable ? [UIColor redColor] : [UIColor blueColor];
+        
+    }
     cell.frame = CGRectMake(0, 0, tabBarWidth, 70);
     return cell;
 }

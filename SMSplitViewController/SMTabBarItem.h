@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SMTabBarItem : UIView
+@interface SMTabBarItem : NSObject
+
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, assign) UIImage *image;
+@property (nonatomic, assign) UIImage *selectedImage;
+@property (nonatomic, assign) UIImage *unselectedImage;
 
 @end

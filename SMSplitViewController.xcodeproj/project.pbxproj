@@ -22,6 +22,7 @@
 		41A8B3BD18AF82330095B154 /* SMSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3BC18AF82330095B154 /* SMSplitViewController.m */; };
 		41A8B3C118AF82B90095B154 /* SMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3C018AF82B90095B154 /* SMTabBar.m */; };
 		41A8B3C418AF94980095B154 /* SMTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3C318AF94980095B154 /* SMTabBarItem.m */; };
+		41A8B3C718B0DC5D0095B154 /* SMTabBarItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3C618B0DC5D0095B154 /* SMTabBarItemCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		41A8B3C018AF82B90095B154 /* SMTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTabBar.m; sourceTree = "<group>"; };
 		41A8B3C218AF94980095B154 /* SMTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTabBarItem.h; sourceTree = "<group>"; };
 		41A8B3C318AF94980095B154 /* SMTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTabBarItem.m; sourceTree = "<group>"; };
+		41A8B3C518B0DC5D0095B154 /* SMTabBarItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTabBarItemCell.h; sourceTree = "<group>"; };
+		41A8B3C618B0DC5D0095B154 /* SMTabBarItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTabBarItemCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +166,8 @@
 				41A8B3C018AF82B90095B154 /* SMTabBar.m */,
 				41A8B3C218AF94980095B154 /* SMTabBarItem.h */,
 				41A8B3C318AF94980095B154 /* SMTabBarItem.m */,
+				41A8B3C518B0DC5D0095B154 /* SMTabBarItemCell.h */,
+				41A8B3C618B0DC5D0095B154 /* SMTabBarItemCell.m */,
 			);
 			name = SplitSubVC;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41A8B3C718B0DC5D0095B154 /* SMTabBarItemCell.m in Sources */,
 				41A8B3C418AF94980095B154 /* SMTabBarItem.m in Sources */,
 				41A8B39D18AF81A70095B154 /* SMAppDelegate.m in Sources */,
 				41A8B3C118AF82B90095B154 /* SMTabBar.m in Sources */,
