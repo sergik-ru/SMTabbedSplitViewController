@@ -25,15 +25,18 @@
     
     [super loadView];
     
-    SMTabBarItem *tab = [[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@""] andTitle:@"tab 1"];
-    SMTabBarItem *tab2 = [[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@""] andTitle:@"tab 2"];
-    SMTabBarItem *tab3 = [[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@""] andTitle:@"tab 3"];
-    SMTabBarItem *tab4 = [[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@""] andTitle:@"tab 4"];
+    SMTabBarItem *tab = [[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"Evernote"] andTitle:@"Evernote"];
+    SMTabBarItem *tab2 = [[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"Facebook"] andTitle:@"Facebook"];
+    SMTabBarItem *tab3 = [[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"Google+"] andTitle:@"Google+"];
+    SMTabBarItem *tab4 = [[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"Instagram"] andTitle:@"Instagram"];
+    SMTabBarItem *tab5 = [[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"LastFM"] andTitle:@"LastFM"];
+    SMTabBarItem *tab6 = [[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"Reddit"] andTitle:@"Reddit"];
     
-    SMTabBarItem *action = [[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@""] andTitle:@"act 1"];
-    SMTabBarItem *action2 = [[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@""] andTitle:@"act 2"];
     
-    _tabBar = [[SMTabBar alloc] initTabBar:@[tab, tab2, tab3, tab4] andActions:@[action, action2]];
+    SMTabBarItem *action = [[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"Twitter"] andTitle:@"Twitter"];
+    SMTabBarItem *action2 = [[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"Skype"] andTitle:@"Skype"];
+    
+    _tabBar = [[SMTabBar alloc] initTabBar:@[tab, tab2, tab3, tab4, tab5, tab6] andActions:@[action, action2]];
     [self.view addSubview:_tabBar.view];
 }
 
