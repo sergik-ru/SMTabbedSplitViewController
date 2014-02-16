@@ -7,32 +7,45 @@
 //
 
 #import "SMSplitViewController.h"
+#import "SMTabBar.h"
 
 @interface SMSplitViewController ()
-
+{
+    SMTabBar *_tabBar;
+}
 @end
 
 @implementation SMSplitViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+- (void)loadView {
+    
+    [super loadView];
+    
+    _tabBar = [[SMTabBar alloc] initTabBar:@[@"1",@"2",@"3"] andActions:@[@"1",@"2"]];
+    [self.view addSubview:_tabBar.view];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+- (void)viewWillLayoutSubviews {
+    
+    [super viewWillLayoutSubviews];
+    
+    [_tabBar.view setNeedsLayout];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (BOOL)shouldAutorotate {
+    
+    return YES;
 }
 
+- (NSUInteger)supportedInterfaceOrientations {
+    
+    return UIInterfaceOrientationMaskAll;
+}
+
+- (void)dealloc {
+    
+    [_tabBar release];
+    
+    [super dealloc];
+}
 @end

@@ -7,13 +7,18 @@
 //
 
 #import "SMAppDelegate.h"
+#import "SMSplitViewController.h"
 
 @implementation SMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    
+    SMSplitViewController *split = [[[SMSplitViewController alloc] init] autorelease];
+    
+    self.window.rootViewController = split;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

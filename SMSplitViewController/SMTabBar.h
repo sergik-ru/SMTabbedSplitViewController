@@ -10,14 +10,19 @@
 
 @protocol SMTabBarDelegate;
 
-@interface SMTabBar : UIViewController
+@interface SMTabBar : UIViewController <UITableViewDelegate, UITableViewDataSource>
+{
+    CGRect _tabsButtonFrame;
+    CGRect _actionsButtonFrame;
+}
 
 @property (nonatomic, assign) NSInteger *selectedTab;
 @property (nonatomic, assign) UIImage *background;
 @property (nonatomic, assign) NSArray *tabsButtons;
 @property (nonatomic, assign) NSArray *actionsButtons;
-@property (nonatomic, weak) id<SMTabBarDelegate> delegate;
-
+@property (nonatomic, assign) id<SMTabBarDelegate> delegate;
+@property (nonatomic, copy) UITableView *tabsTable;
+@property (nonatomic, copy) UITableView *actionsTable;
 
 - (id)initTabBar:(NSArray *)tabs andActions:(NSArray *)actions;
 
