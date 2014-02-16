@@ -9,9 +9,10 @@
 #import "SMTabBar.h"
 #import "SMTabBarItem.h"
 
+#define iOS_7_STATUS_BAR (20 * ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0))
 #define tabBarWidth 70
-#define tabsButtonsFrame CGRectMake(0, 0, tabBarWidth, _tabsButtonsHeight)
-#define actionButtonFrame CGRectMake(0, self.view.bounds.size.height - _tabsButtonsHeight, tabBarWidth, _actionsButtonsHeight)
+#define tabsButtonsFrame CGRectMake(0, 10 + iOS_7_STATUS_BAR, tabBarWidth, _tabsButtonsHeight)
+#define actionButtonFrame CGRectMake(0, self.view.bounds.size.height - _actionsButtonsHeight + iOS_7_STATUS_BAR - 10, tabBarWidth, _actionsButtonsHeight)
 
 @implementation SMTabBar
 {
