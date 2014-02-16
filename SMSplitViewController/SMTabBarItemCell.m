@@ -16,7 +16,6 @@
     if (self) {
         
         self.backgroundColor = [UIColor clearColor];
-        //self.selectionStyle = UITableViewCellSelectionStyleNone;
         
         _iconView = [[[UIImageView alloc] init] autorelease];
         [self addSubview:_iconView];
@@ -34,8 +33,8 @@
     
     [super layoutSubviews];
     
-    _iconView.frame = CGRectMake(0, 0, 70, 70);
-    _titleLabel.frame = CGRectMake(0, CGRectGetMaxY(_iconView.frame), self.bounds.size.height, 11);
+    _iconView.frame = CGRectMake(self.bounds.size.width / 2 - 36 / 2, 5, 36, 36);
+    _titleLabel.frame = CGRectMake(0, CGRectGetMaxY(_iconView.frame), self.bounds.size.width, 12);
 }
 
 @end

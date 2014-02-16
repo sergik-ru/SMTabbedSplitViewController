@@ -10,10 +10,11 @@
 #import "SMTabBarItem.h"
 #import "SMTabBarItemCell.h"
 
-#define iOS_7_STATUS_BAR (20 * ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0))
+#define iOS_7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
 #define tabBarWidth 70
-#define tabsButtonsFrame CGRectMake(0, 10 + iOS_7_STATUS_BAR, tabBarWidth, _tabsButtonsHeight)
-#define actionButtonFrame CGRectMake(0, self.view.bounds.size.height - _actionsButtonsHeight + iOS_7_STATUS_BAR - 10, tabBarWidth, _actionsButtonsHeight)
+#define tabHeight 60
+#define tabsButtonsFrame CGRectMake(0, 10 + iOS_7 * 20, tabBarWidth, _tabsButtonsHeight)
+#define actionButtonFrame CGRectMake(0, self.view.bounds.size.height - _actionsButtonsHeight + iOS_7 * 20 - tabHeight / 2, tabBarWidth, _actionsButtonsHeight)
 
 @implementation SMTabBar
 {
@@ -52,17 +53,24 @@
         
         [_tabsButtons enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             
-           // if ([obj isKindOfClass:[SMTabBarItem class]])
-                _tabsButtonsHeight += 50;
+            if ([obj isKindOfClass:[SMTabBarItem class]])
+                _tabsButtonsHeight += tabHeight;
             
         }];
         
         _tabsTable = [[[UITableView alloc] initWithFrame:tabsButtonsFrame style:UITableViewStylePlain] autorelease];
         _tabsTable.scrollEnabled = NO;
-        _tabsTable.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tabsTable.dataSource = self;
         _tabsTable.delegate = self;
+        
+        if (iOS_7) {
+            
+            _tabsTable.separatorInset = UIEdgeInsetsZero;
+        }
+        
+        _tabsTable.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         _tabsTable.backgroundColor = [UIColor clearColor];
+        _tabsTable.tableFooterView = [[[UIView alloc] init] autorelease];
         
         [self.view addSubview:_tabsTable];
     }
@@ -76,18 +84,24 @@
         
         [_actionsButtons enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             
-          //  if ([obj isKindOfClass:[SMTabBarItem class]])
-                _actionsButtonsHeight += 50;
+            if ([obj isKindOfClass:[SMTabBarItem class]])
+                _actionsButtonsHeight += tabHeight;
             
         }];
         
-        
         _actionsTable = [[[UITableView alloc] initWithFrame:actionButtonFrame style:UITableViewStylePlain] autorelease];
         _actionsTable.scrollEnabled = NO;
-        _actionsTable.separatorStyle = UITableViewCellSeparatorStyleNone;
         _actionsTable.delegate = self;
         _actionsTable.dataSource = self;
+        
+        if (iOS_7) {
+            
+            _tabsTable.separatorInset = UIEdgeInsetsZero;
+        }
+
+        _actionsTable.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         _actionsTable.backgroundColor = [UIColor clearColor];
+        _actionsTable.tableFooterView = [[[UIView alloc] init] autorelease];
         
         [self.view addSubview:_actionsTable];
     }
@@ -129,6 +143,11 @@
     return tableView == _tabsTable ? _tabsButtons.count : _actionsButtons.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return tabHeight;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SMTabBarItemCell *cell = [[[SMTabBarItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil] autorelease];
@@ -151,7 +170,6 @@
     
     cell.iconView.image = tabItem.image;
     cell.titleLabel.text = tabItem.title;
-    cell.frame = CGRectMake(0, 0, tabBarWidth, 70);
     
     return cell;
 }
