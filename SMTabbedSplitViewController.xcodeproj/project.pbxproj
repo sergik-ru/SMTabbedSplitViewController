@@ -25,6 +25,8 @@
 		41A8B3C718B0DC5D0095B154 /* SMTabBarItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3C618B0DC5D0095B154 /* SMTabBarItemCell.m */; };
 		41A8B3CD18B11A4F0095B154 /* SMMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3CC18B11A4F0095B154 /* SMMasterViewController.m */; };
 		41A8B3D118B12C270095B154 /* SMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3D018B12C270095B154 /* SMDetailViewController.m */; };
+		41A8B3D518B2A22C0095B154 /* SMTestMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3D318B2A22C0095B154 /* SMTestMasterViewController.m */; };
+		41A8B3D618B2A22C0095B154 /* SMTestMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A8B3D418B2A22C0095B154 /* SMTestMasterViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,9 @@
 		41A8B3CC18B11A4F0095B154 /* SMMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMMasterViewController.m; sourceTree = "<group>"; };
 		41A8B3CF18B12C270095B154 /* SMDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMDetailViewController.h; sourceTree = "<group>"; };
 		41A8B3D018B12C270095B154 /* SMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMDetailViewController.m; sourceTree = "<group>"; };
+		41A8B3D218B2A22C0095B154 /* SMTestMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTestMasterViewController.h; sourceTree = "<group>"; };
+		41A8B3D318B2A22C0095B154 /* SMTestMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTestMasterViewController.m; sourceTree = "<group>"; };
+		41A8B3D418B2A22C0095B154 /* SMTestMasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMTestMasterViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +133,9 @@
 				41A8B39C18AF81A70095B154 /* SMAppDelegate.m */,
 				41A8B3BB18AF82330095B154 /* SMTabbedSplitViewController.h */,
 				41A8B3BC18AF82330095B154 /* SMTabbedSplitViewController.m */,
+				41A8B3D218B2A22C0095B154 /* SMTestMasterViewController.h */,
+				41A8B3D318B2A22C0095B154 /* SMTestMasterViewController.m */,
+				41A8B3D418B2A22C0095B154 /* SMTestMasterViewController.xib */,
 				41A8B3BE18AF827F0095B154 /* Classes */,
 				41A8B39E18AF81A70095B154 /* Images.xcassets */,
 				41A8B39318AF81A70095B154 /* Supporting Files */,
@@ -292,6 +300,7 @@
 			files = (
 				41A8B39718AF81A70095B154 /* InfoPlist.strings in Resources */,
 				41A8B39F18AF81A70095B154 /* Images.xcassets in Resources */,
+				41A8B3D618B2A22C0095B154 /* SMTestMasterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +327,7 @@
 				41A8B3D118B12C270095B154 /* SMDetailViewController.m in Sources */,
 				41A8B3CD18B11A4F0095B154 /* SMMasterViewController.m in Sources */,
 				41A8B39918AF81A70095B154 /* main.m in Sources */,
+				41A8B3D518B2A22C0095B154 /* SMTestMasterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

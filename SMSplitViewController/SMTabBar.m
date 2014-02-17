@@ -16,6 +16,13 @@
 #define tabsButtonsFrame CGRectMake(0, 10 + iOS_7 * 20, tabBarWidth, _tabsButtonsHeight)
 #define actionButtonFrame CGRectMake(0, self.view.bounds.size.height - _actionsButtonsHeight + iOS_7 * 20 - tabHeight / 2 * iOS_7 - 10 * !iOS_7, tabBarWidth, _actionsButtonsHeight)
 
+@interface SMTabBar ()
+
+@property (nonatomic, copy) UITableView *tabsTable;
+@property (nonatomic, copy) UITableView *actionsTable;
+
+@end
+
 @implementation SMTabBar
 {
     __block CGFloat _tabsButtonsHeight;
@@ -85,8 +92,6 @@
         }];
         
         _actionsTable = [[[UITableView alloc] initWithFrame:actionButtonFrame style:UITableViewStylePlain] autorelease];
-
-        
         _actionsTable.scrollEnabled = NO;
         _actionsTable.delegate = self;
         _actionsTable.dataSource = self;
@@ -138,6 +143,7 @@
     
     [super dealloc];
 }
+
 #pragma mark -
 #pragma mark - Properties
 
@@ -191,13 +197,12 @@
         
         [_selectedTab autorelease], _selectedTab = indexPath.copy;
         [_actionsTable deselectRowAtIndexPath:_selectedAction animated:NO];
-    } else {
+    }
+    else {
         
         [_selectedAction autorelease], _selectedAction = indexPath.copy;
         [_tabsTable deselectRowAtIndexPath:_selectedTab animated:NO];
     }
-    
-
 }
 
 #pragma mark -

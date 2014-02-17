@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SMTabBar.h"
 
-@interface SMTabbedSplitViewController : UIViewController
+@interface SMTabbedSplitViewController : UIViewController <SMTabBarDelegate>
 
 @property (nonatomic, assign) UIColor *background;
 @property (nonatomic, assign) NSArray *tabsViewControllers;

@@ -60,4 +60,20 @@
     self.view.frame = frame;
 }
 
+- (void)setViewController:(UIViewController *)viewController {
+    
+    if (_viewController != viewController) {
+        
+        UIViewController *oldVC = _viewController;
+        
+        _viewController = viewController;
+        
+        [self addChildViewController:_viewController];
+        [self.view addSubview:_viewController.view];
+        
+        [oldVC.view removeFromSuperview];
+        [oldVC removeFromParentViewController];
+    }
+}
+
 @end

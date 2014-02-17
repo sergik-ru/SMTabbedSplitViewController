@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "41A8B38818AF81A70095B154"
-               BuildableName = "SMSplitViewController.app"
+               BuildableName = "SMTabbedSplitViewController.app"
                BlueprintName = "SMTabbedSplitViewController"
                ReferencedContainer = "container:SMTabbedSplitViewController.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "41A8B3A318AF81A70095B154"
-               BuildableName = "SMSplitViewControllerTests.xctest"
+               BuildableName = "SMTabbedSplitViewControllerTests.xctest"
                BlueprintName = "SMTabbedSplitViewControllerTests"
                ReferencedContainer = "container:SMTabbedSplitViewController.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "41A8B38818AF81A70095B154"
-            BuildableName = "SMSplitViewController.app"
+            BuildableName = "SMTabbedSplitViewController.app"
             BlueprintName = "SMTabbedSplitViewController"
             ReferencedContainer = "container:SMTabbedSplitViewController.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "41A8B38818AF81A70095B154"
-            BuildableName = "SMSplitViewController.app"
+            BuildableName = "SMTabbedSplitViewController.app"
             BlueprintName = "SMTabbedSplitViewController"
             ReferencedContainer = "container:SMTabbedSplitViewController.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "41A8B38818AF81A70095B154"
-            BuildableName = "SMSplitViewController.app"
+            BuildableName = "SMTabbedSplitViewController.app"
             BlueprintName = "SMTabbedSplitViewController"
             ReferencedContainer = "container:SMTabbedSplitViewController.xcodeproj">
          </BuildableReference>

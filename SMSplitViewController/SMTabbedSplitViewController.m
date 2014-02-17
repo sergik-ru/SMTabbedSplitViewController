@@ -30,6 +30,7 @@
     if (self) {
         
         _tabBar = [[SMTabBar alloc] init];
+        _tabBar.delegate = self;
         _masterVC = [[SMMasterViewController alloc] init];
         _detailVC = [[SMDetailViewController alloc] init];
     }
@@ -48,11 +49,6 @@
     [self.view addSubview:_tabBar.view];
     [self.view addSubview:_masterVC.view];
     [self.view addSubview:_detailVC.view];
-}
-
-- (void)viewWillLayoutSubviews {
-    
-    [super viewWillLayoutSubviews];
 }
 
 - (void)dealloc {
@@ -97,6 +93,19 @@
 - (NSUInteger)supportedInterfaceOrientations {
     
     return UIInterfaceOrientationMaskAll;
+}
+
+#pragma mark -
+#pragma mark - TabBarDelegate
+
+- (void)tabBar:(SMTabBar *)tabBar selectedViewController:(UIViewController *)vc {
+    
+    
+}
+
+- (void)tabBar:(SMTabBar *)tabBar selectedAction:(NSInteger *)index {
+    
+    
 }
 
 @end

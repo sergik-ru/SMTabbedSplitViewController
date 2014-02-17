@@ -17,8 +17,6 @@
 @property (nonatomic, assign) NSArray *tabsButtons;
 @property (nonatomic, assign) NSArray *actionsButtons;
 @property (nonatomic, assign) id<SMTabBarDelegate> delegate;
-@property (nonatomic, copy) UITableView *tabsTable;
-@property (nonatomic, copy) UITableView *actionsTable;
 
 @end
 
