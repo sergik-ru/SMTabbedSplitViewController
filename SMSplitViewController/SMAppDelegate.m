@@ -7,7 +7,7 @@
 //
 
 #import "SMAppDelegate.h"
-#import "SMSplitViewController.h"
+#import "SMTabbedSplitViewController.h"
 #import "SMTabBarItem.h"
 
 @implementation SMAppDelegate
@@ -16,7 +16,7 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     
-    SMSplitViewController *split = [[[SMSplitViewController alloc] init] autorelease];
+    SMTabbedSplitViewController *split = [[[SMTabbedSplitViewController alloc] init] autorelease];
     
     SMTabBarItem *tab = [[[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"Evernote"] andTitle:@"Evernote"] autorelease];
     SMTabBarItem *tab2 = [[[SMTabBarItem alloc] initWithImage:[UIImage imageNamed:@"Facebook"] andTitle:@"Facebook"] autorelease];
@@ -34,7 +34,7 @@
     split.background = [UIColor whiteColor];
     self.window.rootViewController = split;
     
-    self.window.backgroundColor = [UIColor whiteColor];
+    //self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }

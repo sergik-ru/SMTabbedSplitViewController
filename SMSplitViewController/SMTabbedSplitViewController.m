@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Sergey Marchukov. All rights reserved.
 //
 
-#import "SMSplitViewController.h"
+#import "SMTabbedSplitViewController.h"
 #import "SMTabBar.h"
 #import "SMTabBarItem.h"
 #import "SMMasterViewController.h"
 #import "SMDetailViewController.h"
 
 
-@interface SMSplitViewController ()
+@interface SMTabbedSplitViewController ()
 {
     SMTabBar *_tabBar;
     SMMasterViewController *_masterVC;
@@ -21,7 +21,7 @@
 }
 @end
 
-@implementation SMSplitViewController
+@implementation SMTabbedSplitViewController
 
 - (id)init {
     

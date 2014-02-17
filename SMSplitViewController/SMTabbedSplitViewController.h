@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SMSplitViewController : UIViewController
+@interface SMTabbedSplitViewController : UIViewController
 
 @property (nonatomic, assign) UIColor *background;
 @property (nonatomic, assign) NSArray *tabsViewControllers;
