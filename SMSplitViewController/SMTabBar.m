@@ -192,6 +192,7 @@
     else if (tableView == _actionsTable) {
         
         tabItem = [_actionsButtons objectAtIndex:indexPath.row];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     cell.iconView.image = tabItem.image;
@@ -208,8 +209,6 @@
         if (![_selectedTab isEqual:indexPath]) {
             
             [_selectedTab autorelease], _selectedTab = indexPath.copy;
-            [_actionsTable deselectRowAtIndexPath:_selectedAction animated:NO];
-            _selectedAction = nil;
             
             SMTabBarItemCell *cell = (SMTabBarItemCell *)[tableView cellForRowAtIndexPath:indexPath];
             [self.delegate tabBar:self selectedViewController:cell.viewController];
@@ -220,8 +219,7 @@
         if (![_selectedAction isEqual:indexPath]) {
             
             [_selectedAction autorelease], _selectedAction = indexPath.copy;
-            [_tabsTable deselectRowAtIndexPath:_selectedTab animated:NO];
-            _selectedTab = nil;
+            [_tabsTable selectRowAtIndexPath:_selectedTab animated:NO scrollPosition:UITableViewScrollPositionNone];
         }
     }
 }

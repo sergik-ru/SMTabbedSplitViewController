@@ -67,6 +67,8 @@
         UIViewController *oldVC = _viewController;
         
         _viewController = viewController;
+        _viewController.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+        _viewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
         [self addChildViewController:_viewController];
         [self.view addSubview:_viewController.view];

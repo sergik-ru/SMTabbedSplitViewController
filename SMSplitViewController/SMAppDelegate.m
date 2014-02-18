@@ -19,19 +19,33 @@
     
     SMTabbedSplitViewController *split = [[[SMTabbedSplitViewController alloc] init] autorelease];
     
-    SMTestMasterViewController *testVC = [[[SMTestMasterViewController alloc] init] autorelease];
+    SMTestMasterViewController *tab1VC = [[[SMTestMasterViewController alloc] init] autorelease];
+    SMTabBarItem *tab1 = [[[SMTabBarItem alloc] initWithVC:tab1VC image:[UIImage imageNamed:@"Evernote"] andTitle:@"Evernote"] autorelease];
     
-    SMTabBarItem *tab = [[[SMTabBarItem alloc] initWithVC:testVC image:[UIImage imageNamed:@"Evernote"] andTitle:@"Evernote"] autorelease];
-    SMTabBarItem *tab2 = [[[SMTabBarItem alloc] initWithVC:testVC image:[UIImage imageNamed:@"Facebook"] andTitle:@"Facebook"] autorelease];
-    SMTabBarItem *tab3 = [[[SMTabBarItem alloc] initWithVC:testVC image:[UIImage imageNamed:@"Google+"] andTitle:@"Google+"] autorelease];
-    SMTabBarItem *tab4 = [[[SMTabBarItem alloc] initWithVC:testVC image:[UIImage imageNamed:@"Instagram"] andTitle:@"Instagram"] autorelease];
-    SMTabBarItem *tab5 = [[[SMTabBarItem alloc] initWithVC:testVC image:[UIImage imageNamed:@"LastFM"] andTitle:@"LastFM"] autorelease];
-    SMTabBarItem *tab6 = [[[SMTabBarItem alloc] initWithVC:testVC image:[UIImage imageNamed:@"Reddit"] andTitle:@"Reddit"] autorelease];
+    SMTestMasterViewController *tab2VC = [[[SMTestMasterViewController alloc] init] autorelease];
+    tab2VC.view.backgroundColor = [UIColor greenColor];
+    SMTabBarItem *tab2 = [[[SMTabBarItem alloc] initWithVC:tab2VC image:[UIImage imageNamed:@"Facebook"] andTitle:@"Facebook"] autorelease];
     
-    SMTabBarItem *action = [[[SMTabBarItem alloc] initWithVC:testVC image:[UIImage imageNamed:@"Twitter"] andTitle:@"Twitter"] autorelease];
-    SMTabBarItem *action2 = [[[SMTabBarItem alloc] initWithVC:testVC image:[UIImage imageNamed:@"Skype"] andTitle:@"Skype"] autorelease];
+    SMTestMasterViewController *tab3VC = [[[SMTestMasterViewController alloc] init] autorelease];
+    tab3VC.view.backgroundColor = [UIColor blueColor];
+    SMTabBarItem *tab3 = [[[SMTabBarItem alloc] initWithVC:tab3VC image:[UIImage imageNamed:@"Google+"] andTitle:@"Google+"] autorelease];
     
-    split.tabsViewControllers = @[tab, tab2, tab3, tab4, tab5, tab6];
+    SMTestMasterViewController *tab4VC = [[[SMTestMasterViewController alloc] init] autorelease];
+    tab4VC.view.backgroundColor = [UIColor blackColor];
+    SMTabBarItem *tab4 = [[[SMTabBarItem alloc] initWithVC:tab4VC image:[UIImage imageNamed:@"Instagram"] andTitle:@"Instagram"] autorelease];
+    
+    SMTestMasterViewController *tab5VC = [[[SMTestMasterViewController alloc] init] autorelease];
+    tab5VC.view.backgroundColor = [UIColor grayColor];
+    SMTabBarItem *tab5 = [[[SMTabBarItem alloc] initWithVC:tab5VC image:[UIImage imageNamed:@"LastFM"] andTitle:@"LastFM"] autorelease];
+    
+    SMTestMasterViewController *tab6VC = [[[SMTestMasterViewController alloc] init] autorelease];
+    tab6VC.view.backgroundColor = [UIColor orangeColor];
+    SMTabBarItem *tab6 = [[[SMTabBarItem alloc] initWithVC:tab6VC image:[UIImage imageNamed:@"Reddit"] andTitle:@"Reddit"] autorelease];
+    
+    SMTabBarItem *action = [[[SMTabBarItem alloc] initWithVC:nil image:[UIImage imageNamed:@"Twitter"] andTitle:@"Twitter"] autorelease];
+    SMTabBarItem *action2 = [[[SMTabBarItem alloc] initWithVC:nil image:[UIImage imageNamed:@"Skype"] andTitle:@"Skype"] autorelease];
+    
+    split.tabsViewControllers = @[tab1, tab2, tab3, tab4, tab5, tab6];
     split.actionsTabs = @[action, action2];
     
     split.background = [UIColor whiteColor];
