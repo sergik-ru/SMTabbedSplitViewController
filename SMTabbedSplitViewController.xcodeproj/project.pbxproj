@@ -133,9 +133,7 @@
 				41A8B39C18AF81A70095B154 /* SMAppDelegate.m */,
 				41A8B3BB18AF82330095B154 /* SMTabbedSplitViewController.h */,
 				41A8B3BC18AF82330095B154 /* SMTabbedSplitViewController.m */,
-				41A8B3D218B2A22C0095B154 /* SMTestMasterViewController.h */,
-				41A8B3D318B2A22C0095B154 /* SMTestMasterViewController.m */,
-				41A8B3D418B2A22C0095B154 /* SMTestMasterViewController.xib */,
+				41A8B3D718B3E72F0095B154 /* TestVCs */,
 				41A8B3BE18AF827F0095B154 /* Classes */,
 				41A8B39E18AF81A70095B154 /* Images.xcassets */,
 				41A8B39318AF81A70095B154 /* Supporting Files */,
@@ -220,6 +218,16 @@
 				41A8B3D018B12C270095B154 /* SMDetailViewController.m */,
 			);
 			name = DetailVC;
+			sourceTree = "<group>";
+		};
+		41A8B3D718B3E72F0095B154 /* TestVCs */ = {
+			isa = PBXGroup;
+			children = (
+				41A8B3D218B2A22C0095B154 /* SMTestMasterViewController.h */,
+				41A8B3D318B2A22C0095B154 /* SMTestMasterViewController.m */,
+				41A8B3D418B2A22C0095B154 /* SMTestMasterViewController.xib */,
+			);
+			name = TestVCs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
