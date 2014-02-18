@@ -14,7 +14,7 @@
 #define tabBarWidth 70
 #define tabItemHeight 60
 #define tabsButtonsFrame CGRectMake(0, 10 + iOS_7 * 20, tabBarWidth, _tabsButtonsHeight)
-#define actionButtonFrame CGRectMake(0, self.view.bounds.size.height - _actionsButtonsHeight + iOS_7 * 20 - tabItemHeight / 2 * iOS_7 - 10 * !iOS_7, tabItemHeight, _actionsButtonsHeight)
+#define actionButtonFrame CGRectMake(0, self.view.bounds.size.height - _actionsButtonsHeight + iOS_7 * 20 - tabItemHeight / 2 * iOS_7 - 10 * !iOS_7, tabBarWidth, _actionsButtonsHeight)
 
 @interface SMTabBar ()
 
