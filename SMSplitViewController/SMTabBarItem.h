@@ -12,9 +12,10 @@
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, assign) UIImage *image;
+@property (nonatomic, retain) UIViewController *viewController;
 @property (nonatomic, assign) UIImage *selectedImage;
 @property (nonatomic, assign) UIImage *unselectedImage;
 
-- (id)initWithImage:(UIImage *)image andTitle:(NSString *)title;
+- (id)initWithVC:(UIViewController *)vc image:(UIImage *)image andTitle:(NSString *)title;
 
 @end
