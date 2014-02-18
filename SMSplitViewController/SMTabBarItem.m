@@ -12,10 +12,10 @@
 
 - (id)init {
     
-    return [self initWithImage:[UIImage imageNamed:@""] andTitle:@""];
+    return [self initWithVC:nil image:[UIImage imageNamed:@""] andTitle:@""];
 }
 
-- (id)initWithImage:(UIImage *)image andTitle:(NSString *)title {
+- (id)initWithVC:(UIViewController *)vc image:(UIImage *)image andTitle:(NSString *)title {
     
     self = [super init];
     
@@ -23,6 +23,7 @@
         
         self.image = image;
         self.title = title;
+        self.viewController = vc;
     }
     
     return self;

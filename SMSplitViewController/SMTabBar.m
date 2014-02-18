@@ -12,9 +12,9 @@
 
 #define iOS_7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
 #define tabBarWidth 70
-#define tabHeight 60
+#define tabItemHeight 60
 #define tabsButtonsFrame CGRectMake(0, 10 + iOS_7 * 20, tabBarWidth, _tabsButtonsHeight)
-#define actionButtonFrame CGRectMake(0, self.view.bounds.size.height - _actionsButtonsHeight + iOS_7 * 20 - tabHeight / 2 * iOS_7 - 10 * !iOS_7, tabBarWidth, _actionsButtonsHeight)
+#define actionButtonFrame CGRectMake(0, self.view.bounds.size.height - _actionsButtonsHeight + iOS_7 * 20 - tabItemHeight / 2 * iOS_7 - 10 * !iOS_7, tabItemHeight, _actionsButtonsHeight)
 
 @interface SMTabBar ()
 
@@ -42,6 +42,7 @@
         
         self.view.backgroundColor = [UIColor clearColor];
         self.view.clipsToBounds = YES;
+        self.view.layer.cornerRadius = 7;
     }
     
     return self;
@@ -51,14 +52,18 @@
     
     if (tabs) {
         
-        _tabsButtons = [NSArray arrayWithArray:tabs];
+        NSMutableArray *tmpItems = [NSMutableArray array];
         
-        [_tabsButtons enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [tabs enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             
-            if ([obj isKindOfClass:[SMTabBarItem class]])
-                _tabsButtonsHeight += tabHeight;
-            
+            if ([obj isKindOfClass:[SMTabBarItem class]]) {
+                
+                _tabsButtonsHeight += tabItemHeight;
+                [tmpItems addObject:obj];
+            }
         }];
+        
+        _tabsButtons = [NSArray arrayWithArray:tmpItems];
         
         _tabsTable = [[[UITableView alloc] initWithFrame:tabsButtonsFrame style:UITableViewStylePlain] autorelease];
         _tabsTable.scrollEnabled = NO;
@@ -82,14 +87,18 @@
     
     if (actions) {
         
-        _actionsButtons = [NSArray arrayWithArray:actions];
+        NSMutableArray *tmpItems = [NSMutableArray array];
         
-        [_actionsButtons enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [actions enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             
-            if ([obj isKindOfClass:[SMTabBarItem class]])
-                _actionsButtonsHeight += tabHeight;
-            
+            if ([obj isKindOfClass:[SMTabBarItem class]]) {
+                
+                _actionsButtonsHeight += tabItemHeight;
+                [tmpItems addObject:obj];
+            }
         }];
+        
+        _actionsButtons = [NSArray arrayWithArray:tmpItems];
         
         _actionsTable = [[[UITableView alloc] initWithFrame:actionButtonFrame style:UITableViewStylePlain] autorelease];
         _actionsTable.scrollEnabled = NO;
@@ -167,7 +176,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return tabHeight;
+    return tabItemHeight;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -187,6 +196,7 @@
     
     cell.iconView.image = tabItem.image;
     cell.titleLabel.text = tabItem.title;
+    cell.viewController = tabItem.viewController;
     
     return cell;
 }
@@ -195,13 +205,24 @@
     
     if (tableView == _tabsTable) {
         
-        [_selectedTab autorelease], _selectedTab = indexPath.copy;
-        [_actionsTable deselectRowAtIndexPath:_selectedAction animated:NO];
+        if (![_selectedTab isEqual:indexPath]) {
+            
+            [_selectedTab autorelease], _selectedTab = indexPath.copy;
+            [_actionsTable deselectRowAtIndexPath:_selectedAction animated:NO];
+            _selectedAction = nil;
+            
+            SMTabBarItemCell *cell = (SMTabBarItemCell *)[tableView cellForRowAtIndexPath:indexPath];
+            [self.delegate tabBar:self selectedViewController:cell.viewController];
+        }
     }
     else {
         
-        [_selectedAction autorelease], _selectedAction = indexPath.copy;
-        [_tabsTable deselectRowAtIndexPath:_selectedTab animated:NO];
+        if (![_selectedAction isEqual:indexPath]) {
+            
+            [_selectedAction autorelease], _selectedAction = indexPath.copy;
+            [_tabsTable deselectRowAtIndexPath:_selectedTab animated:NO];
+            _selectedTab = nil;
+        }
     }
 }
 

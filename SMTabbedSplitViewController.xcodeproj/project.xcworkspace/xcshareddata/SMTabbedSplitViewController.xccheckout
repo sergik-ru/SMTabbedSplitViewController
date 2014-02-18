@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8DD49C1D-4D4E-4796-AF04-CC985FD22FCF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SMTabbedSplitViewController</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>85CFCBB2-EBA9-4E25-9B7D-88F94F95FA7A</key>
+		<string>file:///Users/sergik/Dropbox/SMSplitViewController/</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SMTabbedSplitViewController.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>85CFCBB2-EBA9-4E25-9B7D-88F94F95FA7A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>file:///Users/sergik/Dropbox/SMSplitViewController/</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>85CFCBB2-EBA9-4E25-9B7D-88F94F95FA7A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>85CFCBB2-EBA9-4E25-9B7D-88F94F95FA7A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SMSplitViewController</string>
+		</dict>
+	</array>
+</dict>
+</plist>

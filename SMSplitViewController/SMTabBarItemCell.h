@@ -14,5 +14,6 @@
 @property (nonatomic, assign) UIImageView *iconView;
 @property (nonatomic, assign) UIImage *selecteImage;
 @property (nonatomic, assign) UIImage *unselectedImage;
+@property (nonatomic, assign) UIViewController *viewController;
 
 @end

@@ -100,7 +100,7 @@
 
 - (void)tabBar:(SMTabBar *)tabBar selectedViewController:(UIViewController *)vc {
     
-    
+    _masterVC.viewController = vc;
 }
 
 - (void)tabBar:(SMTabBar *)tabBar selectedAction:(NSInteger *)index {
