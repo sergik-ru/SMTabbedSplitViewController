@@ -205,15 +205,24 @@
     
     if (tableView == _tabsTable) {
         
-        [_selectedTab autorelease], _selectedTab = indexPath.copy;
-        [_actionsTable deselectRowAtIndexPath:_selectedAction animated:NO];
-        SMTabBarItemCell *cell = (SMTabBarItemCell *)[tableView cellForRowAtIndexPath:indexPath];
-        [self.delegate tabBar:self selectedViewController:cell.viewController];
+        if (![_selectedTab isEqual:indexPath]) {
+            
+            [_selectedTab autorelease], _selectedTab = indexPath.copy;
+            [_actionsTable deselectRowAtIndexPath:_selectedAction animated:NO];
+            _selectedAction = nil;
+            
+            SMTabBarItemCell *cell = (SMTabBarItemCell *)[tableView cellForRowAtIndexPath:indexPath];
+            [self.delegate tabBar:self selectedViewController:cell.viewController];
+        }
     }
     else {
         
-        [_selectedAction autorelease], _selectedAction = indexPath.copy;
-        [_tabsTable deselectRowAtIndexPath:_selectedTab animated:NO];
+        if (![_selectedAction isEqual:indexPath]) {
+            
+            [_selectedAction autorelease], _selectedAction = indexPath.copy;
+            [_tabsTable deselectRowAtIndexPath:_selectedTab animated:NO];
+            _selectedTab = nil;
+        }
     }
 }
 

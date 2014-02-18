@@ -28,7 +28,7 @@
         
         self.view.clipsToBounds = YES;
         self.view.layer.cornerRadius = 7;
-        self.view.backgroundColor = [UIColor greenColor];
+        self.view.backgroundColor = [UIColor clearColor];
     }
     
     return self;
