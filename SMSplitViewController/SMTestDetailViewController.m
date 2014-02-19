@@ -26,7 +26,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.webView.delegate = self;
+}
+
+- (void)setSiteURL:(NSString *)siteURL {
+    
+    _siteURL = siteURL;
+    
+    NSURL *url = [NSURL URLWithString:_siteURL];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:requestObj];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,8 +44,25 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    
+    
+}
+
+-(void)webViewDidStartLoad:(UIWebView *)webView {
+    
+    
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    
+    
+}
+
 - (void)dealloc {
+    
     [_webView release];
+    [_siteURL release];
     [super dealloc];
 }
 

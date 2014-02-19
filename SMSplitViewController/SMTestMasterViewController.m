@@ -7,6 +7,8 @@
 //
 
 #import "SMTestMasterViewController.h"
+#import "SMTabbedSplitViewController.h"
+#import "SMTestDetailViewController.h"
 
 @interface SMTestMasterViewController ()
 
@@ -45,7 +47,10 @@
 
 - (IBAction)buttonClick:(id)sender {
     
-    
+    SMTabbedSplitViewController *split = (SMTabbedSplitViewController *)[[[UIApplication sharedApplication] delegate] window].rootViewController;
+    SMTestDetailViewController *detailVC = [[[SMTestDetailViewController alloc] init] autorelease];
+    split.detailViewController = detailVC;
+    detailVC.siteURL = _siteURL;
 }
 
 - (void)setSiteURL:(NSString *)siteURL {

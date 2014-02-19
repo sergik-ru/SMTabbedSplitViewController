@@ -63,11 +63,16 @@
 #pragma mark -
 #pragma mark - Properties
 
+- (void)setDetailViewController:(UIViewController *)detailViewController {
+    
+    _detailVC.viewController = detailViewController;
+}
+
 - (void)setBackground:(UIColor *)background {
     
     _tabBar.view.backgroundColor = background;
     _masterVC.view.backgroundColor = background;
-    _detailVC.view.backgroundColor = background;    
+    _detailVC.view.backgroundColor = background;
 }
 
 - (void)setTabsViewControllers:(NSArray *)tabsViewControllers {

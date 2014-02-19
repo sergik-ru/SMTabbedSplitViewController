@@ -14,5 +14,6 @@
 @property (nonatomic, assign) UIColor *background;
 @property (nonatomic, assign) NSArray *tabsViewControllers;
 @property (nonatomic, assign) NSArray *actionsTabs;
+@property (nonatomic, assign) UIViewController *detailViewController;
 
 @end

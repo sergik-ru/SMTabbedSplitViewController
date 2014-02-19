@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SMTestDetailViewController : UIViewController
+@interface SMTestDetailViewController : UIViewController <UIWebViewDelegate>
 
 @property (retain, nonatomic) IBOutlet UIWebView *webView;
+@property (nonatomic, copy) NSString *siteURL;
 
 @end
