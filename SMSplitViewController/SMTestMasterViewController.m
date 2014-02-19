@@ -35,11 +35,25 @@
 }
 
 - (void)dealloc {
+    
     [_textLabel release];
     [_buttonNext release];
     [_imageView release];
+    [_siteURL release];
     [super dealloc];
 }
+
 - (IBAction)buttonClick:(id)sender {
+    
+    
 }
+
+- (void)setSiteURL:(NSString *)siteURL {
+    
+    _siteURL = siteURL.copy;
+    
+    NSString *title = [NSString stringWithFormat:@"open %@ in detail VC", _siteURL];
+    [self.buttonNext setTitle:title forState:UIControlStateNormal];
+}
+
 @end

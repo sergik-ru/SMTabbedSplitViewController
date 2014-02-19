@@ -27,6 +27,8 @@
 		41A8B3D118B12C270095B154 /* SMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3D018B12C270095B154 /* SMDetailViewController.m */; };
 		41A8B3D518B2A22C0095B154 /* SMTestMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3D318B2A22C0095B154 /* SMTestMasterViewController.m */; };
 		41A8B3D618B2A22C0095B154 /* SMTestMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A8B3D418B2A22C0095B154 /* SMTestMasterViewController.xib */; };
+		41A8B3E118B547E70095B154 /* SMTestDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3DF18B547E70095B154 /* SMTestDetailViewController.m */; };
+		41A8B3E218B547E70095B154 /* SMTestDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A8B3E018B547E70095B154 /* SMTestDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,9 @@
 		41A8B3D218B2A22C0095B154 /* SMTestMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTestMasterViewController.h; sourceTree = "<group>"; };
 		41A8B3D318B2A22C0095B154 /* SMTestMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTestMasterViewController.m; sourceTree = "<group>"; };
 		41A8B3D418B2A22C0095B154 /* SMTestMasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMTestMasterViewController.xib; sourceTree = "<group>"; };
+		41A8B3DE18B547E70095B154 /* SMTestDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTestDetailViewController.h; sourceTree = "<group>"; };
+		41A8B3DF18B547E70095B154 /* SMTestDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTestDetailViewController.m; sourceTree = "<group>"; };
+		41A8B3E018B547E70095B154 /* SMTestDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMTestDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,11 +228,30 @@
 		41A8B3D718B3E72F0095B154 /* TestVCs */ = {
 			isa = PBXGroup;
 			children = (
+				41A8B3D818B547570095B154 /* Master */,
+				41A8B3E318B5480F0095B154 /* Detail */,
+			);
+			name = TestVCs;
+			sourceTree = "<group>";
+		};
+		41A8B3D818B547570095B154 /* Master */ = {
+			isa = PBXGroup;
+			children = (
 				41A8B3D218B2A22C0095B154 /* SMTestMasterViewController.h */,
 				41A8B3D318B2A22C0095B154 /* SMTestMasterViewController.m */,
 				41A8B3D418B2A22C0095B154 /* SMTestMasterViewController.xib */,
 			);
-			name = TestVCs;
+			name = Master;
+			sourceTree = "<group>";
+		};
+		41A8B3E318B5480F0095B154 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				41A8B3DE18B547E70095B154 /* SMTestDetailViewController.h */,
+				41A8B3DF18B547E70095B154 /* SMTestDetailViewController.m */,
+				41A8B3E018B547E70095B154 /* SMTestDetailViewController.xib */,
+			);
+			name = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41A8B39718AF81A70095B154 /* InfoPlist.strings in Resources */,
+				41A8B3E218B547E70095B154 /* SMTestDetailViewController.xib in Resources */,
 				41A8B39F18AF81A70095B154 /* Images.xcassets in Resources */,
 				41A8B3D618B2A22C0095B154 /* SMTestMasterViewController.xib in Resources */,
 			);
@@ -330,6 +355,7 @@
 				41A8B3C718B0DC5D0095B154 /* SMTabBarItemCell.m in Sources */,
 				41A8B3C418AF94980095B154 /* SMTabBarItem.m in Sources */,
 				41A8B39D18AF81A70095B154 /* SMAppDelegate.m in Sources */,
+				41A8B3E118B547E70095B154 /* SMTestDetailViewController.m in Sources */,
 				41A8B3C118AF82B90095B154 /* SMTabBar.m in Sources */,
 				41A8B3BD18AF82330095B154 /* SMTabbedSplitViewController.m in Sources */,
 				41A8B3D118B12C270095B154 /* SMDetailViewController.m in Sources */,

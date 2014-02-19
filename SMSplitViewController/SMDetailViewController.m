@@ -37,6 +37,13 @@
 #pragma mark -
 #pragma mark - ViewController Lifecycle
 
+- (void)loadView {
+    
+    [super loadView];
+    
+    self.view.backgroundColor = [UIColor clearColor];
+}
+
 - (void)viewWillLayoutSubviews {
     
     [super viewWillLayoutSubviews];
@@ -46,6 +53,24 @@
     frame.origin.x -= UIInterfaceOrientationIsPortrait(self.interfaceOrientation) ? 10 : 0;
     frame.size.width = UIInterfaceOrientationIsPortrait(self.interfaceOrientation) ? 768 - 70 - 310 : 1024 - 70 - 320;
     self.view.frame = frame;
+}
+
+- (void)setViewController:(UIViewController *)viewController {
+    
+    if (_viewController != viewController) {
+        
+        UIViewController *oldVC = _viewController;
+        
+        _viewController = viewController;
+        _viewController.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+        _viewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        
+        [self addChildViewController:_viewController];
+        [self.view addSubview:_viewController.view];
+        
+        [oldVC.view removeFromSuperview];
+        [oldVC removeFromParentViewController];
+    }
 }
 
 @end
