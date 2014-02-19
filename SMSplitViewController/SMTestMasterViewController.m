@@ -18,15 +18,14 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [super viewDidLoad];    
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,4 +34,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc {
+    [_textLabel release];
+    [_buttonNext release];
+    [_imageView release];
+    [super dealloc];
+}
+- (IBAction)buttonClick:(id)sender {
+}
 @end

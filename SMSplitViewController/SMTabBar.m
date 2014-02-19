@@ -79,6 +79,13 @@
         _tabsTable.backgroundColor = [UIColor clearColor];
         _tabsTable.tableFooterView = [[[UIView alloc] init] autorelease];
         
+        if (_tabsButtons.count > 0) {
+            
+            NSIndexPath *firstTab = [NSIndexPath indexPathForRow:0 inSection:0];
+            [_tabsTable selectRowAtIndexPath:firstTab animated:YES scrollPosition:UITableViewScrollPositionNone];
+            [self tableView:_tabsTable didSelectRowAtIndexPath:firstTab];
+        }
+        
         [self.view addSubview:_tabsTable];
     }
 }
@@ -192,7 +199,6 @@
     else if (tableView == _actionsTable) {
         
         tabItem = [_actionsButtons objectAtIndex:indexPath.row];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     cell.iconView.image = tabItem.image;
@@ -215,6 +221,8 @@
         }
     }
     else {
+        
+        [tableView deselectRowAtIndexPath:indexPath animated:NO];
         
         if (![_selectedAction isEqual:indexPath]) {
             
