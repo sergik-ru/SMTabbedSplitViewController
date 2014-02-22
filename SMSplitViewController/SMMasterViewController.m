@@ -62,7 +62,7 @@
 
 - (void)setViewController:(UIViewController *)viewController {
     
-    if (_viewController != viewController) {
+    if (viewController) {
         
         UIViewController *oldVC = _viewController;
         

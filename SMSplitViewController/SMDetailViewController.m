@@ -26,6 +26,7 @@
     
     if (self) {
         
+        self.view.frame = frame;
         self.view.clipsToBounds = YES;
         self.view.layer.cornerRadius = 7;
         self.view.backgroundColor = [UIColor clearColor];
@@ -48,16 +49,19 @@
     
     [super viewWillLayoutSubviews];
     
+    CGRect appFrame = [UIScreen mainScreen].applicationFrame;
     CGRect frame = detailFrame;
     
     frame.origin.x -= UIInterfaceOrientationIsPortrait(self.interfaceOrientation) ? 10 : 0;
-    frame.size.width = UIInterfaceOrientationIsPortrait(self.interfaceOrientation) ? 768 - 70 - 310 : 1024 - 70 - 320;
+    frame.size.width = UIInterfaceOrientationIsPortrait(self.interfaceOrientation) ? appFrame.size.width - 70 - 310 : appFrame.size.height - 70 - 320;
     self.view.frame = frame;
+    
+    NSLog(@"%@", NSStringFromCGRect(appFrame));
 }
 
 - (void)setViewController:(UIViewController *)viewController {
     
-    if (_viewController != viewController) {
+    if (viewController) {
         
         UIViewController *oldVC = _viewController;
         
