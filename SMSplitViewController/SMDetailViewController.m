@@ -55,9 +55,17 @@
     frame.origin.x -= UIInterfaceOrientationIsPortrait(self.interfaceOrientation) ? 10 : 0;
     frame.size.width = UIInterfaceOrientationIsPortrait(self.interfaceOrientation) ? appFrame.size.width - 70 - 310 : appFrame.size.height - 70 - 320;
     self.view.frame = frame;
-    
-    NSLog(@"%@", NSStringFromCGRect(appFrame));
 }
+
+- (void)dealloc {
+    
+    [_viewController release];
+    
+    [super dealloc];
+}
+
+#pragma mark -
+#pragma mark - Properties
 
 - (void)setViewController:(UIViewController *)viewController {
     
@@ -65,7 +73,7 @@
         
         UIViewController *oldVC = _viewController;
         
-        _viewController = viewController;
+       [_viewController autorelease], _viewController = [viewController retain];
         _viewController.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
         _viewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         

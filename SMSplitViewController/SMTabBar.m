@@ -18,8 +18,8 @@
 
 @interface SMTabBar ()
 
-@property (nonatomic, copy) UITableView *tabsTable;
-@property (nonatomic, copy) UITableView *actionsTable;
+@property (nonatomic, retain) UITableView *tabsTable;
+@property (nonatomic, retain) UITableView *actionsTable;
 
 @end
 
@@ -65,7 +65,7 @@
         
         _tabsButtons = [NSArray arrayWithArray:tmpItems];
         
-        _tabsTable = [[[UITableView alloc] initWithFrame:tabsButtonsFrame style:UITableViewStylePlain] autorelease];
+        _tabsTable = [[UITableView alloc] initWithFrame:tabsButtonsFrame style:UITableViewStylePlain];
         _tabsTable.scrollEnabled = NO;
         _tabsTable.dataSource = self;
         _tabsTable.delegate = self;
@@ -107,7 +107,7 @@
         
         _actionsButtons = [NSArray arrayWithArray:tmpItems];
         
-        _actionsTable = [[[UITableView alloc] initWithFrame:actionButtonFrame style:UITableViewStylePlain] autorelease];
+        _actionsTable = [[UITableView alloc] initWithFrame:actionButtonFrame style:UITableViewStylePlain];
         _actionsTable.scrollEnabled = NO;
         _actionsTable.delegate = self;
         _actionsTable.dataSource = self;
@@ -154,6 +154,9 @@
 
 - (void)dealloc {
     
+    [_tabsTable release];
+    [_actionsTable release];
+    
     [_selectedAction release];
     [_selectedTab release];
     
@@ -169,7 +172,7 @@
 }
 
 - (void)setActionsButtons:(NSArray *)actionsButtons {
-    
+        
     [self actionsInit:actionsButtons];
 }
 

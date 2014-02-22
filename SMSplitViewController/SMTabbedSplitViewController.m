@@ -57,6 +57,9 @@
     [_masterVC release];
     [_detailVC release];
     
+    [_tabsViewControllers release];
+    [_actionsTabs release];
+    
     [super dealloc];
 }
 
@@ -77,13 +80,13 @@
 
 - (void)setTabsViewControllers:(NSArray *)tabsViewControllers {
     
-    _tabsViewControllers = tabsViewControllers;
+    _tabsViewControllers = [tabsViewControllers retain];
     _tabBar.tabsButtons = _tabsViewControllers;
 }
 
 - (void)setActionsTabs:(NSArray *)actionsTabs {
 
-    _actionsTabs = actionsTabs;
+    _actionsTabs = [actionsTabs retain];
     _tabBar.actionsButtons = _actionsTabs;
 }
 

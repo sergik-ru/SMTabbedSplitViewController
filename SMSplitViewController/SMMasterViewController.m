@@ -60,13 +60,23 @@
     self.view.frame = frame;
 }
 
+- (void)dealloc {
+    
+    [_viewController release];
+    
+    [super dealloc];
+}
+
+#pragma mark -
+#pragma mark - Properties
+
 - (void)setViewController:(UIViewController *)viewController {
     
     if (viewController) {
         
         UIViewController *oldVC = _viewController;
         
-        _viewController = viewController;
+        [_viewController autorelease], _viewController = [viewController retain];
         _viewController.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
         _viewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
