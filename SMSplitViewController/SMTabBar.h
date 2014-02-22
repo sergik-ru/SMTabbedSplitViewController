@@ -13,9 +13,10 @@
 @interface SMTabBar : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, assign) UIImage *background;
-@property (nonatomic, assign) NSArray *tabsButtons;
+@property (nonatomic, retain) NSArray *tabsButtons;
 @property (nonatomic, assign) NSArray *actionsButtons;
 @property (nonatomic, assign) id<SMTabBarDelegate> delegate;
+@property (nonatomic, assign) NSUInteger selectedTabIndex;
 
 @end
 
@@ -24,6 +25,5 @@
 @required
 
 - (void)tabBar:(SMTabBar *)tabBar selectedViewController:(UIViewController *)vc;
-- (void)tabBar:(SMTabBar *)tabBar selectedAction:(NSInteger *)index;
 
 @end

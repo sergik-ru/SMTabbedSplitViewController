@@ -28,7 +28,6 @@
     __block CGFloat _tabsButtonsHeight;
     __block CGFloat _actionsButtonsHeight;
     NSIndexPath *_selectedTab;
-    NSIndexPath *_selectedAction;
 }
 
 #pragma mark -
@@ -82,6 +81,7 @@
         if (_tabsButtons.count > 0) {
             
             NSIndexPath *firstTab = [NSIndexPath indexPathForRow:0 inSection:0];
+            _selectedTabIndex = [firstTab row];
             [_tabsTable selectRowAtIndexPath:firstTab animated:YES scrollPosition:UITableViewScrollPositionNone];
             [self tableView:_tabsTable didSelectRowAtIndexPath:firstTab];
         }
@@ -105,7 +105,7 @@
             }
         }];
         
-        _actionsButtons = [NSArray arrayWithArray:tmpItems];
+        _actionsButtons = [[NSArray arrayWithArray:tmpItems] retain];
         
         _actionsTable = [[UITableView alloc] initWithFrame:actionButtonFrame style:UITableViewStylePlain];
         _actionsTable.scrollEnabled = NO;
@@ -156,8 +156,6 @@
     
     [_tabsTable release];
     [_actionsTable release];
-    
-    [_selectedAction release];
     [_selectedTab release];
     
     [super dealloc];
@@ -198,15 +196,16 @@
     if (tableView == _tabsTable) {
         
         tabItem = [_tabsButtons objectAtIndex:indexPath.row];
+        cell.viewController = tabItem.viewController;
     }
     else if (tableView == _actionsTable) {
         
         tabItem = [_actionsButtons objectAtIndex:indexPath.row];
+        cell.actionBlock = tabItem.actionBlock;
     }
     
     cell.iconView.image = tabItem.image;
     cell.titleLabel.text = tabItem.title;
-    cell.viewController = tabItem.viewController;
     
     return cell;
 }
@@ -218,7 +217,7 @@
         if (![_selectedTab isEqual:indexPath]) {
             
             [_selectedTab autorelease], _selectedTab = indexPath.copy;
-            
+            _selectedTabIndex = [indexPath row];
             SMTabBarItemCell *cell = (SMTabBarItemCell *)[tableView cellForRowAtIndexPath:indexPath];
             [self.delegate tabBar:self selectedViewController:cell.viewController];
         }
@@ -226,12 +225,10 @@
     else {
         
         [tableView deselectRowAtIndexPath:indexPath animated:NO];
-        
-        if (![_selectedAction isEqual:indexPath]) {
-            
-            [_selectedAction autorelease], _selectedAction = indexPath.copy;
-            [_tabsTable selectRowAtIndexPath:_selectedTab animated:NO scrollPosition:UITableViewScrollPositionNone];
-        }
+        [_tabsTable selectRowAtIndexPath:_selectedTab animated:NO scrollPosition:UITableViewScrollPositionNone];
+        SMTabBarItemCell *selectedCell = (SMTabBarItemCell *)[tableView cellForRowAtIndexPath:indexPath];
+        if (selectedCell.actionBlock)
+            selectedCell.actionBlock();
     }
 }
 

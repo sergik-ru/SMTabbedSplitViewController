@@ -21,12 +21,37 @@
     
     if (self) {
         
-        self.image = image;
-        self.title = title;
-        self.viewController = vc;
+        _image = image;
+        _title = title;
+        _viewController = [vc retain];
     }
     
     return self;
+}
+
+- (id)initWithActionBlock:(ActionBlock)actionBlock image:(UIImage *)image andTitle:(NSString *)title {
+    
+    self = [super init];
+    
+    if (self) {
+        
+        _actionBlock = actionBlock ? actionBlock : ^{
+            
+            NSLog(@"ActionBlock is nil!");
+        };
+        
+        _image = image;
+        _title = title;
+    }
+    
+    return self;
+}
+
+-(void)dealloc {
+    
+    [_viewController release];
+    
+    [super dealloc];
 }
 
 @end

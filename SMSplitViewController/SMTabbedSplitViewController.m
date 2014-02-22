@@ -111,9 +111,4 @@
     _masterVC.viewController = vc;
 }
 
-- (void)tabBar:(SMTabBar *)tabBar selectedAction:(NSInteger *)index {
-    
-    
-}
-
 @end

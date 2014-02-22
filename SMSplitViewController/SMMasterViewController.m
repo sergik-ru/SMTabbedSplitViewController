@@ -61,9 +61,7 @@
 }
 
 - (void)dealloc {
-    
-    [_viewController release];
-    
+        
     [super dealloc];
 }
 
@@ -76,7 +74,7 @@
         
         UIViewController *oldVC = _viewController;
         
-        [_viewController autorelease], _viewController = [viewController retain];
+        _viewController = viewController;
         _viewController.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
         _viewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         

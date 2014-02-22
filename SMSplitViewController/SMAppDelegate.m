@@ -61,8 +61,8 @@
     tab6VC.imageView.image = tab6.image;
     tab6VC.siteURL = @"http://www.reddit.com";
 
-    SMTabBarItem *action = [[[SMTabBarItem alloc] initWithVC:nil image:[UIImage imageNamed:@"Twitter"] andTitle:@"Twitter"] autorelease];
-    SMTabBarItem *action2 = [[[SMTabBarItem alloc] initWithVC:nil image:[UIImage imageNamed:@"Skype"] andTitle:@"Skype"] autorelease];
+    SMTabBarItem *action = [[[SMTabBarItem alloc] initWithActionBlock:nil image:[UIImage imageNamed:@"Twitter"] andTitle:@"Twitter"] autorelease];
+    SMTabBarItem *action2 = [[[SMTabBarItem alloc] initWithActionBlock:nil image:[UIImage imageNamed:@"Skype"] andTitle:@"Skype"] autorelease];
     
     split.tabsViewControllers = @[tab1, tab2, tab3, tab4, tab5, tab6];
     split.actionsTabs = @[action, action2];

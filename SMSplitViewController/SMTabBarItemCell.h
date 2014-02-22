@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^ActionBlock)(void);
+
 @interface SMTabBarItemCell : UITableViewCell
 
-@property (nonatomic, copy) UILabel *titleLabel;
+@property (nonatomic, assign) UILabel *titleLabel;
 @property (nonatomic, assign) UIImageView *iconView;
 @property (nonatomic, assign) UIImage *selecteImage;
 @property (nonatomic, assign) UIImage *unselectedImage;
 @property (nonatomic, assign) UIViewController *viewController;
+@property (nonatomic, assign) ActionBlock actionBlock;
 
 @end
