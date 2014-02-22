@@ -88,4 +88,17 @@
     }
 }
 
+#pragma mark -
+#pragma mark - Autototate iOS 6.0 +
+
+- (BOOL)shouldAutorotate {
+    
+    return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    
+    return UIInterfaceOrientationMaskAll;
+}
+
 @end
