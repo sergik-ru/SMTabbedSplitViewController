@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SMSplitViewController/SMDetailViewController.m"
-            timestampString = "414863133.01499"
+            timestampString = "414875799.932352"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "-dealloc"
             landmarkType = "5">
          </BreakpointContent>

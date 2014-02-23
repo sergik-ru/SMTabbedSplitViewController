@@ -8,7 +8,7 @@
 
 #import "SMDetailViewController.h"
 
-#define detailFrame CGRectMake(70 + 320, 0, self.view.bounds.size.width, self.view.bounds.size.height)
+#define detailFrame CGRectMake(70 + 320 + 1, 0, self.view.bounds.size.width, self.view.bounds.size.height)
 
 @implementation SMDetailViewController
 
@@ -46,7 +46,8 @@
     CGRect frame = detailFrame;
     
     frame.origin.x -= UIInterfaceOrientationIsPortrait(self.interfaceOrientation) ? 10 : 0;
-    frame.size.width = UIInterfaceOrientationIsPortrait(self.interfaceOrientation) ? appFrame.size.width - 70 - 310 : appFrame.size.height - 70 - 320;
+    frame.size.width = UIInterfaceOrientationIsPortrait(self.interfaceOrientation) ? appFrame.size.width - 70 - 310 + 1 : appFrame.size.height - 70 - 320 + 1;
+    
     self.view.frame = frame;
 }
 
