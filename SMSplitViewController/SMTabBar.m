@@ -125,13 +125,6 @@
     }
 }
 
-- (UIView *)tableHeaderSeparator {
-    
-    UIView *lineView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 0.7)] autorelease];
-    lineView.backgroundColor = [UIColor lightGrayColor];
-    return lineView;
-}
-
 #pragma mark -
 #pragma mark - ViewController Lifecycle
 

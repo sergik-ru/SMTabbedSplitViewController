@@ -17,6 +17,6 @@ typedef void (^ActionBlock)(void);
 @property (nonatomic, assign) UIImage *selecteImage;
 @property (nonatomic, assign) UIImage *unselectedImage;
 @property (nonatomic, assign) UIViewController *viewController;
-@property (nonatomic, assign) ActionBlock actionBlock;
+@property (nonatomic, copy) ActionBlock actionBlock;
 
 @end

@@ -17,7 +17,7 @@
     
     SMMainViewController *mainVC = [[[SMMainViewController alloc] init] autorelease];
     UINavigationController *nc = [[[UINavigationController alloc] initWithRootViewController:mainVC] autorelease];
-    //nc.navigationBarHidden = YES;
+    nc.navigationBarHidden = YES;
     
     self.window.rootViewController = nc;
     [self.window makeKeyAndVisible];

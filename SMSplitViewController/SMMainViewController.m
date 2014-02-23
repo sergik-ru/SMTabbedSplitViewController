@@ -51,10 +51,10 @@
     
     SMTestMasterViewController *tab2VC = [[[SMTestMasterViewController alloc] init] autorelease];
     tab2VC.view.backgroundColor = [UIColor greenColor];
-    SMTabBarItem *tab2 = [[[SMTabBarItem alloc] initWithVC:tab2VC image:[UIImage imageNamed:@"Facebook"] andTitle:@"Facebook"] autorelease];
+    SMTabBarItem *tab2 = [[[SMTabBarItem alloc] initWithVC:tab2VC image:[UIImage imageNamed:@"Twitter"] andTitle:@"Twitter"] autorelease];
     tab2VC.textLabel.text = tab2.title;
     tab2VC.imageView.image = tab2.image;
-    tab2VC.siteURL = @"https://www.facebook.com";
+    tab2VC.siteURL = @"https://www.twitter.com";
     
     SMTestMasterViewController *tab3VC = [[[SMTestMasterViewController alloc] init] autorelease];
     tab3VC.view.backgroundColor = [UIColor blueColor];
@@ -84,8 +84,19 @@
     tab6VC.imageView.image = tab6.image;
     tab6VC.siteURL = @"http://www.reddit.com";
     
-    SMTabBarItem *action = [[[SMTabBarItem alloc] initWithActionBlock:nil image:[UIImage imageNamed:@"Twitter"] andTitle:@"Twitter"] autorelease];
-    SMTabBarItem *action2 = [[[SMTabBarItem alloc] initWithActionBlock:nil image:[UIImage imageNamed:@"Skype"] andTitle:@"Skype"] autorelease];
+    SMTabBarItem *action = [[[SMTabBarItem alloc] initWithActionBlock:^{
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"About" message:@"SMTabbedSplitViewController by Marchukov Sergey" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        [alert release];
+    } image:[UIImage imageNamed:@"info"] andTitle:@"About"] autorelease];
+    
+    SMTabBarItem *action2 = [[[SMTabBarItem alloc] initWithActionBlock:^{
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Exit message" message:@"Do you really want to quit?" delegate:self cancelButtonTitle:@"YES" otherButtonTitles:@"NO", nil];
+        [alert show];
+        [alert release];
+    } image:[UIImage imageNamed:@"exit"] andTitle:@"Exit"] autorelease];
     
     split.tabsViewControllers = @[tab1, tab2, tab3, tab4, tab5, tab6];
     split.actionsTabs = @[action, action2];
@@ -93,6 +104,14 @@
     split.background = [UIColor whiteColor];
     
     [self.navigationController pushViewController:split animated:YES];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+    
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
 }
 
 @end

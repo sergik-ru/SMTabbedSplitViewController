@@ -35,7 +35,7 @@
     
     if (self) {
         
-        _actionBlock = actionBlock ? actionBlock : ^{
+        self.actionBlock = actionBlock ? actionBlock : ^{
             
             NSLog(@"ActionBlock is nil!");
         };
@@ -50,6 +50,7 @@
 -(void)dealloc {
     
     [_viewController release];
+    [_actionBlock release];
     
     [super dealloc];
 }

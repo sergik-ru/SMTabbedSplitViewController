@@ -19,6 +19,7 @@
         self.backgroundColor = [UIColor clearColor];
         
         _iconView = [[[UIImageView alloc] init] autorelease];
+        _iconView.contentMode = UIViewContentModeCenter;
         [self addSubview:_iconView];
         
         _titleLabel = [[[UILabel alloc] init] autorelease];
