@@ -36,8 +36,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)dealloc {
-    
+- (void)dealloc
+{
     [_textLabel release];
     [_buttonNext release];
     [_imageView release];
@@ -47,7 +47,8 @@
 
 - (IBAction)buttonClick:(id)sender {
     
-    SMTabbedSplitViewController *split = (SMTabbedSplitViewController *)[[[UIApplication sharedApplication] delegate] window].rootViewController;
+    UINavigationController *nc = (UINavigationController *)[[[UIApplication sharedApplication] delegate] window].rootViewController;
+    SMTabbedSplitViewController *split = (SMTabbedSplitViewController *)nc.topViewController;
     SMTestDetailViewController *detailVC = [[[SMTestDetailViewController alloc] init] autorelease];
     split.detailViewController = detailVC;
     detailVC.siteURL = _siteURL;

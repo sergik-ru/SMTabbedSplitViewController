@@ -14,7 +14,7 @@
 
 @property (nonatomic, assign) UIImage *background;
 @property (nonatomic, retain) NSArray *tabsButtons;
-@property (nonatomic, assign) NSArray *actionsButtons;
+@property (nonatomic, retain) NSArray *actionsButtons;
 @property (nonatomic, assign) id<SMTabBarDelegate> delegate;
 @property (nonatomic, assign) NSUInteger selectedTabIndex;
 

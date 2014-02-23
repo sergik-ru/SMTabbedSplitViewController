@@ -28,7 +28,7 @@
         
         self.view.frame = frame;
         self.view.clipsToBounds = YES;
-        self.view.layer.cornerRadius = 7;
+//      self.view.layer.cornerRadius = 7;
         self.view.backgroundColor = [UIColor clearColor];
     }
     
@@ -37,13 +37,6 @@
 
 #pragma mark -
 #pragma mark - ViewController Lifecycle
-
-- (void)loadView {
-    
-    [super loadView];
-    
-    self.view.backgroundColor = [UIColor clearColor];
-}
 
 - (void)viewWillLayoutSubviews {
     
@@ -73,7 +66,7 @@
         
         UIViewController *oldVC = _viewController;
         
-       [_viewController autorelease], _viewController = [viewController retain];
+        _viewController = [viewController retain];
         _viewController.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
         _viewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
@@ -82,6 +75,7 @@
         
         [oldVC.view removeFromSuperview];
         [oldVC removeFromParentViewController];
+        [oldVC release];
     }
 }
 

@@ -15,7 +15,6 @@
 
 @interface SMTabbedSplitViewController ()
 {
-    SMTabBar *_tabBar;
     SMMasterViewController *_masterVC;
     SMDetailViewController *_detailVC;
 }
@@ -49,6 +48,33 @@
     [self.view addSubview:_tabBar.view];
     [self.view addSubview:_masterVC.view];
     [self.view addSubview:_detailVC.view];
+    
+    
+    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:_tabBar.view.frame];
+    _tabBar.view.layer.masksToBounds = NO;
+    _tabBar.view.layer.shadowColor = [UIColor blackColor].CGColor;
+    _tabBar.view.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
+    _tabBar.view.layer.shadowOpacity = 1.0f;
+    _tabBar.view.layer.shadowRadius = 2.5f;
+    _tabBar.view.layer.shadowPath = shadowPath.CGPath;
+    
+    shadowPath = [UIBezierPath bezierPathWithRect:_masterVC.view.frame];
+    _masterVC.view.layer.masksToBounds = NO;
+    _masterVC.view.layer.shadowColor = [UIColor blackColor].CGColor;
+    _masterVC.view.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
+    _masterVC.view.layer.shadowOpacity = 1.0f;
+    _masterVC.view.layer.shadowRadius = 2.5f;
+    _masterVC.view.layer.shadowPath = shadowPath.CGPath;
+    
+    
+    shadowPath = [UIBezierPath bezierPathWithRect:_detailVC.view.frame];
+    _detailVC.view.layer.masksToBounds = NO;
+    _detailVC.view.layer.shadowColor = [UIColor blackColor].CGColor;
+    _detailVC.view.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
+    _detailVC.view.layer.shadowOpacity = 1.0f;
+    _detailVC.view.layer.shadowRadius = 2.5f;
+    _detailVC.view.layer.shadowPath = shadowPath.CGPath;
+
 }
 
 - (void)dealloc {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41A8554818BA3957008433D5 /* SMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8554618BA3957008433D5 /* SMMainViewController.m */; };
+		41A8554918BA3957008433D5 /* SMMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A8554718BA3957008433D5 /* SMMainViewController.xib */; };
 		41A8B38D18AF81A70095B154 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A8B38C18AF81A70095B154 /* Foundation.framework */; };
 		41A8B38F18AF81A70095B154 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A8B38E18AF81A70095B154 /* CoreGraphics.framework */; };
 		41A8B39118AF81A70095B154 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A8B39018AF81A70095B154 /* UIKit.framework */; };
@@ -42,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41A8554518BA3957008433D5 /* SMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMMainViewController.h; sourceTree = "<group>"; };
+		41A8554618BA3957008433D5 /* SMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMMainViewController.m; sourceTree = "<group>"; };
+		41A8554718BA3957008433D5 /* SMMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMMainViewController.xib; sourceTree = "<group>"; };
 		41A8B38918AF81A70095B154 /* SMTabbedSplitViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMTabbedSplitViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A8B38C18AF81A70095B154 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		41A8B38E18AF81A70095B154 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -230,6 +235,9 @@
 			children = (
 				41A8B3D818B547570095B154 /* Master */,
 				41A8B3E318B5480F0095B154 /* Detail */,
+				41A8554518BA3957008433D5 /* SMMainViewController.h */,
+				41A8554618BA3957008433D5 /* SMMainViewController.m */,
+				41A8554718BA3957008433D5 /* SMMainViewController.xib */,
 			);
 			name = TestVCs;
 			sourceTree = "<group>";
@@ -334,6 +342,7 @@
 				41A8B3E218B547E70095B154 /* SMTestDetailViewController.xib in Resources */,
 				41A8B39F18AF81A70095B154 /* Images.xcassets in Resources */,
 				41A8B3D618B2A22C0095B154 /* SMTestMasterViewController.xib in Resources */,
+				41A8554918BA3957008433D5 /* SMMainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +367,7 @@
 				41A8B3E118B547E70095B154 /* SMTestDetailViewController.m in Sources */,
 				41A8B3C118AF82B90095B154 /* SMTabBar.m in Sources */,
 				41A8B3BD18AF82330095B154 /* SMTabbedSplitViewController.m in Sources */,
+				41A8554818BA3957008433D5 /* SMMainViewController.m in Sources */,
 				41A8B3D118B12C270095B154 /* SMDetailViewController.m in Sources */,
 				41A8B3CD18B11A4F0095B154 /* SMMasterViewController.m in Sources */,
 				41A8B39918AF81A70095B154 /* main.m in Sources */,

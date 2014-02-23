@@ -11,6 +11,7 @@
 
 @interface SMTabbedSplitViewController : UIViewController <SMTabBarDelegate>
 
+@property (nonatomic, readonly, retain) SMTabBar *tabBar;
 @property (nonatomic, assign) UIColor *background;
 @property (nonatomic, retain) NSArray *tabsViewControllers;
 @property (nonatomic, retain) NSArray *actionsTabs;

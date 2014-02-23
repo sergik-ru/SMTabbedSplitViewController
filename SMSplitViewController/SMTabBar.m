@@ -39,9 +39,9 @@
     
     if (self) {
         
-        self.view.backgroundColor = [UIColor clearColor];
         self.view.clipsToBounds = YES;
-        self.view.layer.cornerRadius = 7;
+//        self.view.layer.cornerRadius = 7;
+        self.view.backgroundColor = [UIColor clearColor];
     }
     
     return self;
@@ -62,7 +62,7 @@
             }
         }];
         
-        _tabsButtons = [NSArray arrayWithArray:tmpItems];
+        _tabsButtons = [[NSArray arrayWithArray:tmpItems] retain];
         
         _tabsTable = [[UITableView alloc] initWithFrame:tabsButtonsFrame style:UITableViewStylePlain];
         _tabsTable.scrollEnabled = NO;
@@ -157,6 +157,9 @@
     [_tabsTable release];
     [_actionsTable release];
     [_selectedTab release];
+    
+    [_tabsButtons release];
+    [_actionsButtons release];
     
     [super dealloc];
 }
