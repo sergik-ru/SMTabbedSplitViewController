@@ -15,7 +15,6 @@
 
 @interface SMTabbedSplitViewController ()
 {
-    SMTabBar *_tabBar;
     SMMasterViewController *_masterVC;
     SMDetailViewController *_detailVC;
 }
@@ -49,6 +48,14 @@
     [self.view addSubview:_tabBar.view];
     [self.view addSubview:_masterVC.view];
     [self.view addSubview:_detailVC.view];
+    
+    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:_masterVC.view.bounds];
+    _masterVC.view.layer.masksToBounds = NO;
+    _masterVC.view.layer.shadowColor = [UIColor blackColor].CGColor;
+    _masterVC.view.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
+    _masterVC.view.layer.shadowOpacity = 1.5f;
+    _masterVC.view.layer.shadowRadius = 2.5f;
+    _masterVC.view.layer.shadowPath = shadowPath.CGPath;
 }
 
 - (void)dealloc {
@@ -57,28 +64,36 @@
     [_masterVC release];
     [_detailVC release];
     
+    [_tabsViewControllers release];
+    [_actionsTabs release];
+    
     [super dealloc];
 }
 
 #pragma mark -
 #pragma mark - Properties
 
+- (void)setDetailViewController:(UIViewController *)detailViewController {
+    
+    _detailVC.viewController = detailViewController;
+}
+
 - (void)setBackground:(UIColor *)background {
     
     _tabBar.view.backgroundColor = background;
     _masterVC.view.backgroundColor = background;
-    _detailVC.view.backgroundColor = background;    
+    _detailVC.view.backgroundColor = background;
 }
 
 - (void)setTabsViewControllers:(NSArray *)tabsViewControllers {
     
-    _tabsViewControllers = tabsViewControllers;
+    _tabsViewControllers = [tabsViewControllers retain];
     _tabBar.tabsButtons = _tabsViewControllers;
 }
 
 - (void)setActionsTabs:(NSArray *)actionsTabs {
 
-    _actionsTabs = actionsTabs;
+    _actionsTabs = [actionsTabs retain];
     _tabBar.actionsButtons = _actionsTabs;
 }
 
@@ -101,11 +116,6 @@
 - (void)tabBar:(SMTabBar *)tabBar selectedViewController:(UIViewController *)vc {
     
     _masterVC.viewController = vc;
-}
-
-- (void)tabBar:(SMTabBar *)tabBar selectedAction:(NSInteger *)index {
-    
-    
 }
 
 @end

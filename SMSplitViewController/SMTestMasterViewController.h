@@ -10,4 +10,11 @@
 
 @interface SMTestMasterViewController : UIViewController
 
+@property (retain, nonatomic) IBOutlet UILabel *textLabel;
+@property (retain, nonatomic) IBOutlet UIButton *buttonNext;
+@property (retain, nonatomic) IBOutlet UIImageView *imageView;
+@property (nonatomic, copy) NSString *siteURL;
+
+- (IBAction)buttonClick:(id)sender;
+
 @end

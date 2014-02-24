@@ -14,12 +14,12 @@
 #define tabBarWidth 70
 #define tabItemHeight 60
 #define tabsButtonsFrame CGRectMake(0, 10 + iOS_7 * 20, tabBarWidth, _tabsButtonsHeight)
-#define actionButtonFrame CGRectMake(0, self.view.bounds.size.height - _actionsButtonsHeight + iOS_7 * 20 - tabItemHeight / 2 * iOS_7 - 10 * !iOS_7, tabItemHeight, _actionsButtonsHeight)
+#define actionButtonFrame CGRectMake(0, self.view.bounds.size.height - _actionsButtonsHeight + iOS_7 * 20 - tabItemHeight / 2 * iOS_7 - 10 * !iOS_7, tabBarWidth, _actionsButtonsHeight)
 
 @interface SMTabBar ()
 
-@property (nonatomic, copy) UITableView *tabsTable;
-@property (nonatomic, copy) UITableView *actionsTable;
+@property (nonatomic, retain) UITableView *tabsTable;
+@property (nonatomic, retain) UITableView *actionsTable;
 
 @end
 
@@ -28,7 +28,6 @@
     __block CGFloat _tabsButtonsHeight;
     __block CGFloat _actionsButtonsHeight;
     NSIndexPath *_selectedTab;
-    NSIndexPath *_selectedAction;
 }
 
 #pragma mark -
@@ -40,9 +39,9 @@
     
     if (self) {
         
-        self.view.backgroundColor = [UIColor clearColor];
         self.view.clipsToBounds = YES;
-        self.view.layer.cornerRadius = 7;
+//        self.view.layer.cornerRadius = 7;
+        self.view.backgroundColor = [UIColor clearColor];
     }
     
     return self;
@@ -63,9 +62,9 @@
             }
         }];
         
-        _tabsButtons = [NSArray arrayWithArray:tmpItems];
+        _tabsButtons = [[NSArray arrayWithArray:tmpItems] retain];
         
-        _tabsTable = [[[UITableView alloc] initWithFrame:tabsButtonsFrame style:UITableViewStylePlain] autorelease];
+        _tabsTable = [[UITableView alloc] initWithFrame:tabsButtonsFrame style:UITableViewStylePlain];
         _tabsTable.scrollEnabled = NO;
         _tabsTable.dataSource = self;
         _tabsTable.delegate = self;
@@ -78,6 +77,14 @@
         _tabsTable.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         _tabsTable.backgroundColor = [UIColor clearColor];
         _tabsTable.tableFooterView = [[[UIView alloc] init] autorelease];
+        
+        if (_tabsButtons.count > 0) {
+            
+            NSIndexPath *firstTab = [NSIndexPath indexPathForRow:0 inSection:0];
+            _selectedTabIndex = [firstTab row];
+            [_tabsTable selectRowAtIndexPath:firstTab animated:YES scrollPosition:UITableViewScrollPositionNone];
+            [self tableView:_tabsTable didSelectRowAtIndexPath:firstTab];
+        }
         
         [self.view addSubview:_tabsTable];
     }
@@ -98,9 +105,9 @@
             }
         }];
         
-        _actionsButtons = [NSArray arrayWithArray:tmpItems];
+        _actionsButtons = [[NSArray arrayWithArray:tmpItems] retain];
         
-        _actionsTable = [[[UITableView alloc] initWithFrame:actionButtonFrame style:UITableViewStylePlain] autorelease];
+        _actionsTable = [[UITableView alloc] initWithFrame:actionButtonFrame style:UITableViewStylePlain];
         _actionsTable.scrollEnabled = NO;
         _actionsTable.delegate = self;
         _actionsTable.dataSource = self;
@@ -116,13 +123,6 @@
         
         [self.view addSubview:_actionsTable];
     }
-}
-
-- (UIView *)tableHeaderSeparator {
-    
-    UIView *lineView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 0.7)] autorelease];
-    lineView.backgroundColor = [UIColor lightGrayColor];
-    return lineView;
 }
 
 #pragma mark -
@@ -147,8 +147,12 @@
 
 - (void)dealloc {
     
-    [_selectedAction release];
+    [_tabsTable release];
+    [_actionsTable release];
     [_selectedTab release];
+    
+    [_tabsButtons release];
+    [_actionsButtons release];
     
     [super dealloc];
 }
@@ -162,7 +166,7 @@
 }
 
 - (void)setActionsButtons:(NSArray *)actionsButtons {
-    
+        
     [self actionsInit:actionsButtons];
 }
 
@@ -188,15 +192,16 @@
     if (tableView == _tabsTable) {
         
         tabItem = [_tabsButtons objectAtIndex:indexPath.row];
+        cell.viewController = tabItem.viewController;
     }
     else if (tableView == _actionsTable) {
         
         tabItem = [_actionsButtons objectAtIndex:indexPath.row];
+        cell.actionBlock = tabItem.actionBlock;
     }
     
     cell.iconView.image = tabItem.image;
     cell.titleLabel.text = tabItem.title;
-    cell.viewController = tabItem.viewController;
     
     return cell;
 }
@@ -208,21 +213,18 @@
         if (![_selectedTab isEqual:indexPath]) {
             
             [_selectedTab autorelease], _selectedTab = indexPath.copy;
-            [_actionsTable deselectRowAtIndexPath:_selectedAction animated:NO];
-            _selectedAction = nil;
-            
+            _selectedTabIndex = [indexPath row];
             SMTabBarItemCell *cell = (SMTabBarItemCell *)[tableView cellForRowAtIndexPath:indexPath];
             [self.delegate tabBar:self selectedViewController:cell.viewController];
         }
     }
     else {
         
-        if (![_selectedAction isEqual:indexPath]) {
-            
-            [_selectedAction autorelease], _selectedAction = indexPath.copy;
-            [_tabsTable deselectRowAtIndexPath:_selectedTab animated:NO];
-            _selectedTab = nil;
-        }
+        [tableView deselectRowAtIndexPath:indexPath animated:NO];
+        [_tabsTable selectRowAtIndexPath:_selectedTab animated:NO scrollPosition:UITableViewScrollPositionNone];
+        SMTabBarItemCell *selectedCell = (SMTabBarItemCell *)[tableView cellForRowAtIndexPath:indexPath];
+        if (selectedCell.actionBlock)
+            selectedCell.actionBlock();
     }
 }
 
