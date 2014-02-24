@@ -13,6 +13,15 @@
 #import "SMDetailViewController.h"
 
 
+#define iOS_7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+#define tabBarWidth 70
+#define tabItemHeight 60
+#define tabsButtonsFrame CGRectMake(0, 10 + iOS_7 * 20, tabBarWidth, _tabsButtonsHeight)
+#define actionButtonFrame CGRectMake(0, self.view.bounds.size.height - _actionsButtonsHeight + iOS_7 * 20 - tabItemHeight / 2 * iOS_7 - 10 * !iOS_7, tabBarWidth, _actionsButtonsHeight)
+#define detailVCFrame CGRectMake(70 + 320 + 1, 0, self.view.bounds.size.width - 1, self.view.bounds.size.height)
+#define masterVCFrame CGRectMake(70, 0, 320, self.view.bounds.size.height)
+
+
 @interface SMTabbedSplitViewController ()
 {
     SMMasterViewController *_masterVC;
@@ -30,8 +39,8 @@
         
         _tabBar = [[SMTabBar alloc] init];
         _tabBar.delegate = self;
-        _masterVC = [[SMMasterViewController alloc] init];
-        _detailVC = [[SMDetailViewController alloc] init];
+        _masterVC = [[SMMasterViewController alloc] initWithFrame:masterVCFrame];
+        _detailVC = [[SMDetailViewController alloc] initWithFrame:detailVCFrame];
     }
     
     return self;
@@ -39,9 +48,9 @@
 #pragma mark -
 #pragma mark - ViewController Lifecycle
 
-- (void)loadView {
+- (void)viewWillAppear:(BOOL)animated {
     
-    [super loadView];
+    [super viewWillAppear:animated];
     
     self.view.backgroundColor = [UIColor clearColor];
     
@@ -49,13 +58,33 @@
     [self.view addSubview:_masterVC.view];
     [self.view addSubview:_detailVC.view];
     
-    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:_masterVC.view.bounds];
+    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:_masterVC.view.frame];
     _masterVC.view.layer.masksToBounds = NO;
     _masterVC.view.layer.shadowColor = [UIColor blackColor].CGColor;
     _masterVC.view.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
     _masterVC.view.layer.shadowOpacity = 1.5f;
     _masterVC.view.layer.shadowRadius = 2.5f;
     _masterVC.view.layer.shadowPath = shadowPath.CGPath;
+}
+
+- (void)viewWillLayoutSubviews {
+    
+    [super viewWillLayoutSubviews];
+    
+    CGRect appFrame = [UIScreen mainScreen].applicationFrame;
+    CGRect detailFrame = detailVCFrame;
+    
+    CGFloat widthDif = UIInterfaceOrientationIsPortrait(self.interfaceOrientation) ? 10 : 0;
+    detailFrame.origin.x -= widthDif;
+    detailFrame.size.width = UIInterfaceOrientationIsPortrait(self.interfaceOrientation) ? appFrame.size.width - 70 - 310 - 1 : appFrame.size.height - 70 - 320 - 1;
+    
+    _detailVC.view.frame = detailFrame;
+
+    CGRect masterFrame = masterVCFrame;
+    masterFrame.size.width -= widthDif;
+    
+    _masterVC.view.frame = masterFrame;
+    
 }
 
 - (void)dealloc {

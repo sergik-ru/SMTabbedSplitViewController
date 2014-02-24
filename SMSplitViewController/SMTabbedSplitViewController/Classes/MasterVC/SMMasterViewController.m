@@ -8,14 +8,6 @@
 
 #import "SMMasterViewController.h"
 
-#define masterVCFrame CGRectMake(70, 0, 320, self.view.bounds.size.height)
-
-@interface SMMasterViewController ()
-
-@property (nonatomic) CGRect masterFrame;
-
-@end
-
 @implementation SMMasterViewController
 
 #pragma mark -
@@ -23,7 +15,7 @@
 
 - (id)init {
     
-    return [self initWithFrame:masterVCFrame];
+    return [self initWithFrame:CGRectZero];
 }
 
 - (id)initWithFrame:(CGRect)frame {
@@ -43,16 +35,6 @@
 
 #pragma mark -
 #pragma mark - ViewController Lifecycle
-
-- (void)viewWillLayoutSubviews {
-    
-    [super viewWillLayoutSubviews];
-    
-    CGRect frame = masterVCFrame;
-    frame.size.width -= (UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) ? 0 : 10;
-    
-    self.view.frame = frame;
-}
 
 - (void)dealloc {
     
