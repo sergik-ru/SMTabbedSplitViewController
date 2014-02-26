@@ -40,7 +40,9 @@
 
 - (IBAction)buttonClick:(id)sender {
     
-    SMTabbedSplitViewController *split = [[[SMTabbedSplitViewController alloc] init] autorelease];
+    SMTabbedSplitViewController *split = [[[SMTabbedSplitViewController alloc] initTabbedSplit] autorelease];
+    
+    //split.tabBar.backgroundImage = [UIImage imageNamed:@""];
     
     SMTestMasterViewController *tab1VC = [[[SMTestMasterViewController alloc] init] autorelease];
     tab1VC.view.backgroundColor = [UIColor lightGrayColor];

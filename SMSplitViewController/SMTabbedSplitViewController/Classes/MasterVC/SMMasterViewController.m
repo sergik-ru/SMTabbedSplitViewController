@@ -26,7 +26,6 @@
         
         self.view.frame = frame;
         self.view.clipsToBounds = YES;
-//        self.view.layer.cornerRadius = 7;
         self.view.backgroundColor = [UIColor clearColor];
     }
     

@@ -10,13 +10,26 @@
 
 typedef void (^ActionBlock)(void);
 
+typedef enum {
+    
+    SMTabBarItemCellTab,
+    SMTabBarItemCellAction
+} SMTabBarItemCellType;
+
 @interface SMTabBarItemCell : UITableViewCell
+{
+    UIView *_topSeparator;
+    UIView *_separator;
+    UIView *_viewBackground;
+}
 
 @property (nonatomic, assign) UILabel *titleLabel;
 @property (nonatomic, assign) UIImageView *iconView;
-@property (nonatomic, assign) UIImage *selecteImage;
-@property (nonatomic, assign) UIImage *unselectedImage;
 @property (nonatomic, assign) UIViewController *viewController;
+@property (nonatomic, assign) UIImage *image;
+@property (nonatomic, assign) UIImage *selectedImage;
 @property (nonatomic, copy) ActionBlock actionBlock;
+@property (nonatomic) SMTabBarItemCellType cellType;
+@property (nonatomic) BOOL isFirstCell;
 
 @end
