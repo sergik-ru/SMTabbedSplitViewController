@@ -112,7 +112,6 @@
         [self.view addSubview:_actionsTable];
     }
 }
-
 #pragma mark -
 #pragma mark - ViewController Lifecycle
 
@@ -120,11 +119,7 @@
     
     [super viewWillLayoutSubviews];
     
-    CGRect frame = [[UIScreen mainScreen] applicationFrame];
-    CGFloat tabBarHeight = UIInterfaceOrientationIsLandscape(self.interfaceOrientation) ? frame.size.width : frame.size.height;
-    tabBarHeight += 20;
-    
-    self.view.frame = CGRectMake(0, 0, tabBarWidth, tabBarHeight);
+    self.view.frame = CGRectMake(0, 0, tabBarWidth, self.view.bounds.size.height);
     
     if (_tabsTable) {
         
@@ -155,7 +150,7 @@
 - (void)setBackgroundImage:(UIImage *)backgroundImage {
     
     _backgroundImage = backgroundImage;
-    CGRect frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+    CGRect frame = CGRectMake(0, 20 * iOS_7, self.view.bounds.size.width, self.view.bounds.size.height);
     UIGraphicsBeginImageContext(self.view.frame.size);
     [backgroundImage drawInRect:frame];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
@@ -210,12 +205,12 @@
         tabItem = [_actionsButtons objectAtIndex:indexPath.row];
         cell.actionBlock = tabItem.actionBlock;
         cell.cellType = SMTabBarItemCellAction;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.iconView.image = tabItem.image;
-    cell.image = tabItem.image;
     cell.selectedImage = tabItem.selectedImage;
+    cell.image = tabItem.image;
     cell.titleLabel.text = tabItem.title;
     
     return cell;

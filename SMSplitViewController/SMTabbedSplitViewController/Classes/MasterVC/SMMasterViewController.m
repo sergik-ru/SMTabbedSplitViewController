@@ -15,7 +15,7 @@
 
 - (id)init {
     
-    return [self initWithFrame:CGRectZero];
+    return [self initWithFrame:CGRectMake(70, 0, 320, self.view.bounds.size.height)];
 }
 
 - (id)initWithFrame:(CGRect)frame {

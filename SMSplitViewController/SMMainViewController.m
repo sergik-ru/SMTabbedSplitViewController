@@ -58,33 +58,33 @@
     tab2VC.imageView.image = tab2.image;
     tab2VC.siteURL = @"https://www.twitter.com";
     
-    SMTestMasterViewController *tab3VC = [[[SMTestMasterViewController alloc] init] autorelease];
-    tab3VC.view.backgroundColor = [UIColor blueColor];
-    SMTabBarItem *tab3 = [[[SMTabBarItem alloc] initWithVC:tab3VC image:[UIImage imageNamed:@"Google+"] andTitle:@"Google+"] autorelease];
-    tab3VC.textLabel.text = tab3.title;
-    tab3VC.imageView.image = tab3.image;
-    tab3VC.siteURL = @"https://www.plus.google.com";
-    
-    SMTestMasterViewController *tab4VC = [[[SMTestMasterViewController alloc] init] autorelease];
-    tab4VC.view.backgroundColor = [UIColor blackColor];
-    SMTabBarItem *tab4 = [[[SMTabBarItem alloc] initWithVC:tab4VC image:[UIImage imageNamed:@"Instagram"] andTitle:@"Instagram"] autorelease];
-    tab4VC.textLabel.text = tab4.title;
-    tab4VC.imageView.image = tab4.image;
-    tab4VC.siteURL = @"http://www.instagram.com";
-    
-    SMTestMasterViewController *tab5VC = [[[SMTestMasterViewController alloc] init] autorelease];
-    tab5VC.view.backgroundColor = [UIColor grayColor];
-    SMTabBarItem *tab5 = [[[SMTabBarItem alloc] initWithVC:tab5VC image:[UIImage imageNamed:@"LastFM"] andTitle:@"LastFM"] autorelease];
-    tab5VC.textLabel.text = tab5.title;
-    tab5VC.imageView.image = tab5.image;
-    tab5VC.siteURL = @"https://www.last.fm";
-    
-    SMTestMasterViewController *tab6VC = [[[SMTestMasterViewController alloc] init] autorelease];
-    tab6VC.view.backgroundColor = [UIColor orangeColor];
-    SMTabBarItem *tab6 = [[[SMTabBarItem alloc] initWithVC:tab6VC image:[UIImage imageNamed:@"Reddit"] andTitle:@"Reddit"] autorelease];
-    tab6VC.textLabel.text = tab6.title;
-    tab6VC.imageView.image = tab6.image;
-    tab6VC.siteURL = @"http://www.reddit.com";
+//    SMTestMasterViewController *tab3VC = [[[SMTestMasterViewController alloc] init] autorelease];
+//    tab3VC.view.backgroundColor = [UIColor blueColor];
+//    SMTabBarItem *tab3 = [[[SMTabBarItem alloc] initWithVC:tab3VC image:[UIImage imageNamed:@"Google+"] andTitle:@"Google+"] autorelease];
+//    tab3VC.textLabel.text = tab3.title;
+//    tab3VC.imageView.image = tab3.image;
+//    tab3VC.siteURL = @"https://www.plus.google.com";
+//    
+//    SMTestMasterViewController *tab4VC = [[[SMTestMasterViewController alloc] init] autorelease];
+//    tab4VC.view.backgroundColor = [UIColor blackColor];
+//    SMTabBarItem *tab4 = [[[SMTabBarItem alloc] initWithVC:tab4VC image:[UIImage imageNamed:@"Instagram"] andTitle:@"Instagram"] autorelease];
+//    tab4VC.textLabel.text = tab4.title;
+//    tab4VC.imageView.image = tab4.image;
+//    tab4VC.siteURL = @"http://www.instagram.com";
+//
+//    SMTestMasterViewController *tab5VC = [[[SMTestMasterViewController alloc] init] autorelease];
+//    tab5VC.view.backgroundColor = [UIColor grayColor];
+//    SMTabBarItem *tab5 = [[[SMTabBarItem alloc] initWithVC:tab5VC image:[UIImage imageNamed:@"LastFM"] andTitle:@"LastFM"] autorelease];
+//    tab5VC.textLabel.text = tab5.title;
+//    tab5VC.imageView.image = tab5.image;
+//    tab5VC.siteURL = @"https://www.last.fm";
+//    
+//    SMTestMasterViewController *tab6VC = [[[SMTestMasterViewController alloc] init] autorelease];
+//    tab6VC.view.backgroundColor = [UIColor orangeColor];
+//    SMTabBarItem *tab6 = [[[SMTabBarItem alloc] initWithVC:tab6VC image:[UIImage imageNamed:@"Reddit"] andTitle:@"Reddit"] autorelease];
+//    tab6VC.textLabel.text = tab6.title;
+//    tab6VC.imageView.image = tab6.image;
+//    tab6VC.siteURL = @"http://www.reddit.com";
     
     SMTabBarItem *action = [[[SMTabBarItem alloc] initWithActionBlock:^{
         
@@ -100,7 +100,7 @@
         [alert release];
     } image:[UIImage imageNamed:@"exit"] andTitle:@"Exit"] autorelease];
     
-    split.tabsViewControllers = @[tab1, tab2, tab3, tab4, tab5, tab6];
+    split.tabsViewControllers = @[tab1, tab2]; //, tab3, tab4, tab5, tab6];
     split.actionsTabs = @[action, action2];
     
     split.background = [UIColor whiteColor];

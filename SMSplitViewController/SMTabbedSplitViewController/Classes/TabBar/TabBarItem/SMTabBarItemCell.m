@@ -19,6 +19,7 @@
         self.backgroundColor = [UIColor clearColor];
         
         _iconView = [[[UIImageView alloc] init] autorelease];
+        _iconView.contentMode = UIViewContentModeCenter;
         [self addSubview:_iconView];
         
         _titleLabel = [[[UILabel alloc] init] autorelease];
@@ -45,6 +46,13 @@
 #pragma mark -
 #pragma mark - Properties
 
+- (void)setImage:(UIImage *)image {
+    
+    _image = [image retain];
+    self.selectedImage = image;
+}
+
+
 - (void)setIsFirstCell:(BOOL)isFirstCell {
     
     _isFirstCell = isFirstCell;
@@ -64,17 +72,19 @@
     if (_cellType == SMTabBarItemCellTab) {
         
         _separator = [[[UIView alloc] init] autorelease];
-        _separator.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tb_stroke"]];
+        _separator.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@""]];
         [self addSubview:_separator];
     }
 }
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
 {
+    _titleLabel.textColor = highlighted ? [UIColor whiteColor] : [UIColor blackColor];
+    
     if (_cellType == SMTabBarItemCellTab) {
         
         _viewBackground = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height - 2)] autorelease];
-        _viewBackground.backgroundColor = highlighted ? [UIColor colorWithWhite:0.15f alpha:1.0f] : [UIColor clearColor];
+        _viewBackground.backgroundColor = highlighted ? [UIColor colorWithWhite:0.75f alpha:1.0f] : [UIColor clearColor];
         self.backgroundView = _viewBackground;
         
         if (_isFirstCell) {
@@ -84,14 +94,15 @@
     }
     
     _iconView.image = highlighted ? _selectedImage : _image;
-    _titleLabel.textColor = highlighted ? [UIColor whiteColor] : [UIColor blackColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
+    _titleLabel.textColor = selected ? [UIColor whiteColor] : [UIColor blackColor];
+    
     if (_cellType == SMTabBarItemCellTab) {
         
-        _viewBackground.backgroundColor = selected ? [UIColor colorWithWhite:0.15f alpha:1.0f] : [UIColor clearColor];
+        _viewBackground.backgroundColor = selected ? [UIColor colorWithWhite:0.75f alpha:1.0f] : [UIColor clearColor];
     }
     
     if (_isFirstCell) {
@@ -100,7 +111,14 @@
     }
     
     _iconView.image = selected ? _selectedImage : _image;
-    _titleLabel.textColor = selected ? [UIColor whiteColor] : [UIColor blackColor];
+}
+
+- (void)dealloc {
+    
+    [_image release];
+    [_selectedImage release];
+    
+    [super dealloc];
 }
 
 @end

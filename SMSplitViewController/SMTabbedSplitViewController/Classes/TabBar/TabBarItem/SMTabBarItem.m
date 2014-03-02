@@ -21,8 +21,8 @@
     
     if (self) {
         
-        _image = image;
-        _title = title;
+        _image = [image retain];
+        _title = [title copy];
         _viewController = [vc retain];
     }
     
@@ -40,8 +40,8 @@
             NSLog(@"ActionBlock is nil!");
         };
         
-        _image = image;
-        _title = title;
+        _image = [image retain];
+        _title = [title copy];
     }
     
     return self;
@@ -51,10 +51,11 @@
     
     [_viewController release];
     [_actionBlock release];
+    [_title release];
+    [_image release];
+    [_selectedImage release];
     
     [super dealloc];
 }
 
 @end
-
-

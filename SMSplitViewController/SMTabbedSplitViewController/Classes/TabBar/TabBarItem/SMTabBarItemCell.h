@@ -26,8 +26,8 @@ typedef enum {
 @property (nonatomic, assign) UILabel *titleLabel;
 @property (nonatomic, assign) UIImageView *iconView;
 @property (nonatomic, assign) UIViewController *viewController;
-@property (nonatomic, assign) UIImage *image;
-@property (nonatomic, assign) UIImage *selectedImage;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) UIImage *selectedImage;
 @property (nonatomic, copy) ActionBlock actionBlock;
 @property (nonatomic) SMTabBarItemCellType cellType;
 @property (nonatomic) BOOL isFirstCell;
