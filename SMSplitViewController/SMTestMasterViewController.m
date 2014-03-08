@@ -28,7 +28,11 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];    
+    [super viewDidLoad];
+    
+    UIImage *btn_bg = [[UIImage imageNamed:@"btn_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(2, 2, 2, 2)];
+    [_buttonNext setBackgroundImage:btn_bg forState:UIControlStateNormal];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,7 +63,9 @@
     
     _siteURL = siteURL.copy;
     
-    NSString *title = [NSString stringWithFormat:@"open %@ in detail VC", _siteURL];
+    NSRange range = [_siteURL rangeOfString:@"www"];
+    NSString *site = [_siteURL stringByReplacingCharactersInRange:NSMakeRange(0, range.location) withString:@""];
+    NSString *title = [NSString stringWithFormat:@"Open %@", site];
     [self.buttonNext setTitle:title forState:UIControlStateNormal];
 }
 

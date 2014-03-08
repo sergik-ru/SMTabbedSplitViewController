@@ -61,17 +61,18 @@
     if (_splitType == SMTabbedSplt) {
         
         [self.view addSubview:_tabBar.view];
-        
-        UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:_masterVC.view.frame];
-        _masterVC.view.layer.masksToBounds = NO;
-        _masterVC.view.layer.shadowColor = [UIColor blackColor].CGColor;
-        _masterVC.view.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
-        _masterVC.view.layer.shadowOpacity = 1.5f;
-        _masterVC.view.layer.shadowRadius = 2.5f;
-        _masterVC.view.layer.shadowPath = shadowPath.CGPath;
     }
     
     [self.view addSubview:_masterVC.view];
+    
+    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:_masterVC.view.frame];
+    _masterVC.view.layer.masksToBounds = NO;
+    _masterVC.view.layer.shadowColor = [UIColor blackColor].CGColor;
+    _masterVC.view.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
+    _masterVC.view.layer.shadowOpacity = 1.5f;
+    _masterVC.view.layer.shadowRadius = 2.5f;
+    _masterVC.view.layer.shadowPath = shadowPath.CGPath;
+    
     [self.view addSubview:_detailVC.view];
 }
 

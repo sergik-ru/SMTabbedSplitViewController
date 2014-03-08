@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SMSplitViewController/SMTabbedSplitViewController/Classes/TabBar/TabBarItem/SMTabBarItemCell.m"
-            timestampString = "415468420.084265"
+            timestampString = "415967393.732374"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
@@ -138,27 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SMSplitViewController/SMTabbedSplitViewController/SMTabbedSplitViewController.m"
-            timestampString = "415468429.836305"
+            timestampString = "415977372.905052"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "-dealloc"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SMSplitViewController/SMTestDetailViewController.m"
-            timestampString = "415468444.280814"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "-dealloc"
             landmarkType = "5">
          </BreakpointContent>
@@ -170,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SMSplitViewController/SMTestMasterViewController.m"
-            timestampString = "415468869.413728"
+            timestampString = "415827044.952724"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "-dealloc"
             landmarkType = "5">
          </BreakpointContent>

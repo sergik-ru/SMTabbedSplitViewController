@@ -23,6 +23,7 @@ typedef enum {
     SMDetailViewController *_detailVC;
     BOOL _masterIsHidden;
 }
+
 @property (nonatomic, readonly, retain) SMTabBar *tabBar;
 @property (nonatomic, assign) UIColor *background;
 @property (nonatomic, retain) NSArray *tabsViewControllers;

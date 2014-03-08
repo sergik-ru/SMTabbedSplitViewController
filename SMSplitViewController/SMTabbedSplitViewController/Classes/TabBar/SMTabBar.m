@@ -199,6 +199,7 @@
         cell.viewController = tabItem.viewController;
         cell.cellType = SMTabBarItemCellTab;
         cell.isFirstCell = indexPath.row == 0;
+        cell.selectedColor = tabItem.viewController.view.backgroundColor;
     }
     else if (tableView == _actionsTable) {
         

@@ -28,6 +28,8 @@
         _titleLabel.font = [UIFont boldSystemFontOfSize:10];
         _titleLabel.textColor = [UIColor whiteColor];
         [self addSubview:_titleLabel];
+        
+        _selectedColor = [[UIColor colorWithWhite:0.85f alpha:1.0f] retain];
     }
     return self;
 }
@@ -40,7 +42,7 @@
     _titleLabel.frame = CGRectMake(0, self.bounds.size.height - 20, self.bounds.size.width, 12);
     
     if (_separator)
-        _separator.frame = CGRectMake(0, self.bounds.size.height - 2, self.bounds.size.width, 2);
+        _separator.frame = CGRectMake(0, self.bounds.size.height - 1, self.bounds.size.width, 1);
 }
 
 #pragma mark -
@@ -49,9 +51,7 @@
 - (void)setImage:(UIImage *)image {
     
     _image = [image retain];
-    self.selectedImage = image;
 }
-
 
 - (void)setIsFirstCell:(BOOL)isFirstCell {
     
@@ -59,8 +59,8 @@
     
     if (isFirstCell) {
         
-        _topSeparator = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 2)] autorelease];
-        _topSeparator.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tb_stroke"]];
+        _topSeparator = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 1)] autorelease];
+        _topSeparator.backgroundColor = [UIColor blackColor];
         [self addSubview:_topSeparator];
     }
 }
@@ -72,7 +72,7 @@
     if (_cellType == SMTabBarItemCellTab) {
         
         _separator = [[[UIView alloc] init] autorelease];
-        _separator.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@""]];
+        _separator.backgroundColor = [UIColor blackColor];
         [self addSubview:_separator];
     }
 }
@@ -83,8 +83,8 @@
     
     if (_cellType == SMTabBarItemCellTab) {
         
-        _viewBackground = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height - 2)] autorelease];
-        _viewBackground.backgroundColor = highlighted ? [UIColor colorWithWhite:0.75f alpha:1.0f] : [UIColor clearColor];
+        _viewBackground = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height - 1)] autorelease];
+        _viewBackground.backgroundColor = highlighted ? _selectedColor : [UIColor clearColor];
         self.backgroundView = _viewBackground;
         
         if (_isFirstCell) {
@@ -102,7 +102,7 @@
     
     if (_cellType == SMTabBarItemCellTab) {
         
-        _viewBackground.backgroundColor = selected ? [UIColor colorWithWhite:0.75f alpha:1.0f] : [UIColor clearColor];
+        _viewBackground.backgroundColor = selected ? _selectedColor : [UIColor clearColor];
     }
     
     if (_isFirstCell) {
@@ -117,6 +117,8 @@
     
     [_image release];
     [_selectedImage release];
+    [_selectedColor release];
+    [_actionBlock release];
     
     [super dealloc];
 }

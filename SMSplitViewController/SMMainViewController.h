@@ -2,13 +2,15 @@
 //  SMMainViewController.h
 //  SMTabbedSplitViewController
 //
-//  Created by Sergey Marchukov on 23.02.14.
+//  Created by Sergey Marchukov on 06.03.14.
 //  Copyright (c) 2014 Sergey Marchukov. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface SMMainViewController : UIViewController <UIAlertViewDelegate>
+@interface SMMainViewController : UIViewController
+
+@property (retain, nonatomic) IBOutlet UIButton *btn_openSplit;
 
 - (IBAction)buttonClick:(id)sender;
 

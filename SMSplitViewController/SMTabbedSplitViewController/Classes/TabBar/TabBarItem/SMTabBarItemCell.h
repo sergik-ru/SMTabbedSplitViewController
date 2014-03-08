@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-typedef void (^ActionBlock)(void);
+#import "SMTabBarItem.h"
 
 typedef enum {
     
@@ -28,6 +27,7 @@ typedef enum {
 @property (nonatomic, assign) UIViewController *viewController;
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, retain) UIImage *selectedImage;
+@property (nonatomic, retain) UIColor *selectedColor;
 @property (nonatomic, copy) ActionBlock actionBlock;
 @property (nonatomic) SMTabBarItemCellType cellType;
 @property (nonatomic) BOOL isFirstCell;
