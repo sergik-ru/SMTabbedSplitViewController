@@ -114,7 +114,7 @@
     } image:[UIImage imageNamed:@"exit"] andTitle:@"Exit"] autorelease];
     
     split.tabsViewControllers = @[tab1, tab2, tab3, tab4, tab5, tab6];
-    split.actionsTabs = @[action, action2];
+    split.actionsButtons = @[action, action2];
     
     split.background = [UIColor whiteColor];
     

@@ -30,7 +30,7 @@ typedef enum {
 @property (nonatomic, readonly, retain) SMTabBar *tabBar;
 @property (nonatomic, assign) UIColor *background;
 @property (nonatomic, retain) NSArray *tabsViewControllers;
-@property (nonatomic, retain) NSArray *actionsTabs;
+@property (nonatomic, retain) NSArray *actionsButtons;
 @property (nonatomic, retain) NSArray *viewControllers;
 @property (nonatomic, readonly, assign) UIViewController *masterViewController;
 @property (nonatomic, assign) UIViewController *detailViewController;

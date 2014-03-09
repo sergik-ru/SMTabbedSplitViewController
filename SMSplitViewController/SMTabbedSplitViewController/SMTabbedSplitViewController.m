@@ -107,7 +107,7 @@
     [_detailVC release];
     
     [_tabsViewControllers release];
-    [_actionsTabs release];
+    [_actionsButtons release];
     [_viewControllers release];
     
     [super dealloc];
@@ -167,8 +167,8 @@
 
 - (void)setActionsTabs:(NSArray *)actionsTabs {
     
-    _actionsTabs = [actionsTabs retain];
-    _tabBar.actionsButtons = _actionsTabs;
+    _actionsButtons = [actionsTabs retain];
+    _tabBar.actionsButtons = _actionsButtons;
 }
 
 #pragma mark -
