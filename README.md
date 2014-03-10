@@ -3,7 +3,7 @@ SMTabbedSplitViewController
 
 Tabbed Split View Controller for iPad is a custom split view controller, with vertical left tabbar control for navigation between master view controllers. Tabbar contains tabs for navigation between view controllers and actions buttons for some actions (for example, exit from application). Also it can be used without tabbar control as customizable alternative UISplitViewController.
 
-![Screenshot](https://raw.github.com/sergik-ru/SMTabbedSplitViewController/master/Screenshots/screenshot1//.png)
+![Screenshot](https://raw.github.com/sergik-ru/SMTabbedSplitViewController/master/Screenshots/screenshot1.png)
 
 Main features:
   - Flexible opportunities for display setup (you can change tabbar, master & detail view controllers sizes, styles and etc).
