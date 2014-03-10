@@ -165,7 +165,7 @@
     _tabBar.tabsButtons = _tabsViewControllers;
 }
 
-- (void)setActionsTabs:(NSArray *)actionsTabs {
+- (void)setActionsButtons:(NSArray *)actionsTabs {
     
     _actionsButtons = [actionsTabs retain];
     _tabBar.actionsButtons = _actionsButtons;

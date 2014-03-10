@@ -171,8 +171,8 @@
     [self tabsInit:tabsButtons];
 }
 
-- (void)setActionsButtons:(NSArray *)actionsButtons {
-    
+-(void)setActionsButtons:(NSArray *)actionsButtons {
+ 
     [self actionsInit:actionsButtons];
 }
 
