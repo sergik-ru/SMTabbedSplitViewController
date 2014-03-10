@@ -25,12 +25,12 @@
 		41A8B3E218B547E70095B154 /* SMTestDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A8B3E018B547E70095B154 /* SMTestDetailViewController.xib */; };
 		41E97ACD18C8FCBD00F48742 /* SMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E97ACB18C8FCBD00F48742 /* SMMainViewController.m */; };
 		41E97ACE18C8FCBD00F48742 /* SMMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41E97ACC18C8FCBD00F48742 /* SMMainViewController.xib */; };
-		84AA42AF18BB26E8003AD0D7 /* SMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA42A118BB26E8003AD0D7 /* SMDetailViewController.m */; };
-		84AA42B018BB26E8003AD0D7 /* SMMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA42A418BB26E8003AD0D7 /* SMMasterViewController.m */; };
-		84AA42B118BB26E8003AD0D7 /* SMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA42A718BB26E8003AD0D7 /* SMTabBar.m */; };
-		84AA42B218BB26E8003AD0D7 /* SMTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA42AA18BB26E8003AD0D7 /* SMTabBarItem.m */; };
-		84AA42B318BB26E8003AD0D7 /* SMTabBarItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA42AC18BB26E8003AD0D7 /* SMTabBarItemCell.m */; };
-		84AA42B418BB26E8003AD0D7 /* SMTabbedSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA42AE18BB26E8003AD0D7 /* SMTabbedSplitViewController.m */; };
+		41E97AF918CE391300F48742 /* SMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E97AEB18CE391300F48742 /* SMDetailViewController.m */; };
+		41E97AFA18CE391300F48742 /* SMMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E97AEE18CE391300F48742 /* SMMasterViewController.m */; };
+		41E97AFB18CE391300F48742 /* SMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E97AF118CE391300F48742 /* SMTabBar.m */; };
+		41E97AFC18CE391300F48742 /* SMTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E97AF418CE391300F48742 /* SMTabBarItem.m */; };
+		41E97AFD18CE391300F48742 /* SMTabBarItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E97AF618CE391300F48742 /* SMTabBarItemCell.m */; };
+		41E97AFE18CE391300F48742 /* SMTabbedSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E97AF818CE391300F48742 /* SMTabbedSplitViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,18 +68,18 @@
 		41E97ACA18C8FCBD00F48742 /* SMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMMainViewController.h; sourceTree = "<group>"; };
 		41E97ACB18C8FCBD00F48742 /* SMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMMainViewController.m; sourceTree = "<group>"; };
 		41E97ACC18C8FCBD00F48742 /* SMMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMMainViewController.xib; sourceTree = "<group>"; };
-		84AA42A018BB26E8003AD0D7 /* SMDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMDetailViewController.h; sourceTree = "<group>"; };
-		84AA42A118BB26E8003AD0D7 /* SMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMDetailViewController.m; sourceTree = "<group>"; };
-		84AA42A318BB26E8003AD0D7 /* SMMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMMasterViewController.h; sourceTree = "<group>"; };
-		84AA42A418BB26E8003AD0D7 /* SMMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMMasterViewController.m; sourceTree = "<group>"; };
-		84AA42A618BB26E8003AD0D7 /* SMTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTabBar.h; sourceTree = "<group>"; };
-		84AA42A718BB26E8003AD0D7 /* SMTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTabBar.m; sourceTree = "<group>"; };
-		84AA42A918BB26E8003AD0D7 /* SMTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTabBarItem.h; sourceTree = "<group>"; };
-		84AA42AA18BB26E8003AD0D7 /* SMTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTabBarItem.m; sourceTree = "<group>"; };
-		84AA42AB18BB26E8003AD0D7 /* SMTabBarItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTabBarItemCell.h; sourceTree = "<group>"; };
-		84AA42AC18BB26E8003AD0D7 /* SMTabBarItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTabBarItemCell.m; sourceTree = "<group>"; };
-		84AA42AD18BB26E8003AD0D7 /* SMTabbedSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTabbedSplitViewController.h; sourceTree = "<group>"; };
-		84AA42AE18BB26E8003AD0D7 /* SMTabbedSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTabbedSplitViewController.m; sourceTree = "<group>"; };
+		41E97AEA18CE391300F48742 /* SMDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMDetailViewController.h; sourceTree = "<group>"; };
+		41E97AEB18CE391300F48742 /* SMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMDetailViewController.m; sourceTree = "<group>"; };
+		41E97AED18CE391300F48742 /* SMMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMMasterViewController.h; sourceTree = "<group>"; };
+		41E97AEE18CE391300F48742 /* SMMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMMasterViewController.m; sourceTree = "<group>"; };
+		41E97AF018CE391300F48742 /* SMTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTabBar.h; sourceTree = "<group>"; };
+		41E97AF118CE391300F48742 /* SMTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTabBar.m; sourceTree = "<group>"; };
+		41E97AF318CE391300F48742 /* SMTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTabBarItem.h; sourceTree = "<group>"; };
+		41E97AF418CE391300F48742 /* SMTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTabBarItem.m; sourceTree = "<group>"; };
+		41E97AF518CE391300F48742 /* SMTabBarItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTabBarItemCell.h; sourceTree = "<group>"; };
+		41E97AF618CE391300F48742 /* SMTabBarItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTabBarItemCell.m; sourceTree = "<group>"; };
+		41E97AF718CE391300F48742 /* SMTabbedSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTabbedSplitViewController.h; sourceTree = "<group>"; };
+		41E97AF818CE391300F48742 /* SMTabbedSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTabbedSplitViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +109,7 @@
 		41A8B38018AF81A70095B154 = {
 			isa = PBXGroup;
 			children = (
-				84AA429D18BB26E8003AD0D7 /* SMTabbedSplitViewController */,
+				41E97AE718CE391300F48742 /* SMTabbedSplitViewController */,
 				41A8B39218AF81A70095B154 /* ExampleApp */,
 				41A8B3AB18AF81A70095B154 /* SMTabbedSplitViewControllerTests */,
 				41A8B38B18AF81A70095B154 /* Frameworks */,
@@ -211,62 +211,61 @@
 			name = Detail;
 			sourceTree = "<group>";
 		};
-		84AA429D18BB26E8003AD0D7 /* SMTabbedSplitViewController */ = {
+		41E97AE718CE391300F48742 /* SMTabbedSplitViewController */ = {
 			isa = PBXGroup;
 			children = (
-				84AA429E18BB26E8003AD0D7 /* Classes */,
-				84AA42AD18BB26E8003AD0D7 /* SMTabbedSplitViewController.h */,
-				84AA42AE18BB26E8003AD0D7 /* SMTabbedSplitViewController.m */,
+				41E97AE818CE391300F48742 /* Classes */,
+				41E97AF718CE391300F48742 /* SMTabbedSplitViewController.h */,
+				41E97AF818CE391300F48742 /* SMTabbedSplitViewController.m */,
 			);
-			name = SMTabbedSplitViewController;
-			path = SMSplitViewController/SMTabbedSplitViewController;
+			path = SMTabbedSplitViewController;
 			sourceTree = "<group>";
 		};
-		84AA429E18BB26E8003AD0D7 /* Classes */ = {
+		41E97AE818CE391300F48742 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				84AA429F18BB26E8003AD0D7 /* DetailVC */,
-				84AA42A218BB26E8003AD0D7 /* MasterVC */,
-				84AA42A518BB26E8003AD0D7 /* TabBar */,
+				41E97AE918CE391300F48742 /* DetailVC */,
+				41E97AEC18CE391300F48742 /* MasterVC */,
+				41E97AEF18CE391300F48742 /* TabBar */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		84AA429F18BB26E8003AD0D7 /* DetailVC */ = {
+		41E97AE918CE391300F48742 /* DetailVC */ = {
 			isa = PBXGroup;
 			children = (
-				84AA42A018BB26E8003AD0D7 /* SMDetailViewController.h */,
-				84AA42A118BB26E8003AD0D7 /* SMDetailViewController.m */,
+				41E97AEA18CE391300F48742 /* SMDetailViewController.h */,
+				41E97AEB18CE391300F48742 /* SMDetailViewController.m */,
 			);
 			path = DetailVC;
 			sourceTree = "<group>";
 		};
-		84AA42A218BB26E8003AD0D7 /* MasterVC */ = {
+		41E97AEC18CE391300F48742 /* MasterVC */ = {
 			isa = PBXGroup;
 			children = (
-				84AA42A318BB26E8003AD0D7 /* SMMasterViewController.h */,
-				84AA42A418BB26E8003AD0D7 /* SMMasterViewController.m */,
+				41E97AED18CE391300F48742 /* SMMasterViewController.h */,
+				41E97AEE18CE391300F48742 /* SMMasterViewController.m */,
 			);
 			path = MasterVC;
 			sourceTree = "<group>";
 		};
-		84AA42A518BB26E8003AD0D7 /* TabBar */ = {
+		41E97AEF18CE391300F48742 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				84AA42A618BB26E8003AD0D7 /* SMTabBar.h */,
-				84AA42A718BB26E8003AD0D7 /* SMTabBar.m */,
-				84AA42A818BB26E8003AD0D7 /* TabBarItem */,
+				41E97AF018CE391300F48742 /* SMTabBar.h */,
+				41E97AF118CE391300F48742 /* SMTabBar.m */,
+				41E97AF218CE391300F48742 /* TabBarItem */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		84AA42A818BB26E8003AD0D7 /* TabBarItem */ = {
+		41E97AF218CE391300F48742 /* TabBarItem */ = {
 			isa = PBXGroup;
 			children = (
-				84AA42A918BB26E8003AD0D7 /* SMTabBarItem.h */,
-				84AA42AA18BB26E8003AD0D7 /* SMTabBarItem.m */,
-				84AA42AB18BB26E8003AD0D7 /* SMTabBarItemCell.h */,
-				84AA42AC18BB26E8003AD0D7 /* SMTabBarItemCell.m */,
+				41E97AF318CE391300F48742 /* SMTabBarItem.h */,
+				41E97AF418CE391300F48742 /* SMTabBarItem.m */,
+				41E97AF518CE391300F48742 /* SMTabBarItemCell.h */,
+				41E97AF618CE391300F48742 /* SMTabBarItemCell.m */,
 			);
 			path = TabBarItem;
 			sourceTree = "<group>";
@@ -371,16 +370,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				41A8B39D18AF81A70095B154 /* SMAppDelegate.m in Sources */,
-				84AA42B418BB26E8003AD0D7 /* SMTabbedSplitViewController.m in Sources */,
-				84AA42B118BB26E8003AD0D7 /* SMTabBar.m in Sources */,
-				84AA42B318BB26E8003AD0D7 /* SMTabBarItemCell.m in Sources */,
+				41E97AFA18CE391300F48742 /* SMMasterViewController.m in Sources */,
+				41E97AFE18CE391300F48742 /* SMTabbedSplitViewController.m in Sources */,
+				41E97AFC18CE391300F48742 /* SMTabBarItem.m in Sources */,
+				41E97AFB18CE391300F48742 /* SMTabBar.m in Sources */,
 				41A8B3E118B547E70095B154 /* SMTestDetailViewController.m in Sources */,
-				84AA42AF18BB26E8003AD0D7 /* SMDetailViewController.m in Sources */,
+				41E97AFD18CE391300F48742 /* SMTabBarItemCell.m in Sources */,
 				41E97ACD18C8FCBD00F48742 /* SMMainViewController.m in Sources */,
 				41A8B39918AF81A70095B154 /* main.m in Sources */,
-				84AA42B018BB26E8003AD0D7 /* SMMasterViewController.m in Sources */,
+				41E97AF918CE391300F48742 /* SMDetailViewController.m in Sources */,
 				41A8B3D518B2A22C0095B154 /* SMTestMasterViewController.m in Sources */,
-				84AA42B218BB26E8003AD0D7 /* SMTabBarItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
