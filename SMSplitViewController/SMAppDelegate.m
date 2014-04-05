@@ -13,10 +13,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    SMMainViewController *mainVC = [[[SMMainViewController alloc] init] autorelease];
-    UINavigationController *nc = [[[UINavigationController alloc] initWithRootViewController:mainVC] autorelease];
+    SMMainViewController *mainVC = [[SMMainViewController alloc] init];
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:mainVC];
     nc.navigationBarHidden = YES;
     
     self.window.rootViewController = nc;

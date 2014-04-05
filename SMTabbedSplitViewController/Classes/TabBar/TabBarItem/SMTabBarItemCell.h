@@ -24,12 +24,12 @@ typedef enum {
     UIView *_viewBackground;
 }
 
-@property (nonatomic, assign) UILabel *titleLabel;
-@property (nonatomic, assign) UIImageView *iconView;
-@property (nonatomic, assign) UIViewController *viewController;
-@property (nonatomic, retain) UIImage *image;
-@property (nonatomic, retain) UIImage *selectedImage;
-@property (nonatomic, retain) UIColor *selectedColor;
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIImageView *iconView;
+@property (nonatomic, weak) UIViewController *viewController;
+@property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) UIImage *selectedImage;
+@property (nonatomic, strong) UIColor *selectedColor;
 @property (nonatomic, copy) ActionBlock actionBlock;
 @property (nonatomic) SMTabBarItemCellType cellType;
 @property (nonatomic) BOOL isFirstCell;

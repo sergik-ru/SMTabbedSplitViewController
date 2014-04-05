@@ -101,18 +101,6 @@
     _masterVC.view.frame = masterFrame;
 }
 
-- (void)dealloc {
-    
-    [_tabBar release];
-    [_masterVC release];
-    [_detailVC release];
-    
-    [_tabsViewControllers release];
-    [_actionsButtons release];
-    [_viewControllers release];
-    
-    [super dealloc];
-}
 
 #pragma mark -
 #pragma mark - Frames
@@ -147,7 +135,7 @@
 
 - (void)setViewControllers:(NSArray *)viewControllers {
     
-    _viewControllers = [viewControllers retain];
+    _viewControllers = viewControllers;
     
     _masterVC.viewController = _viewControllers[0];
     _detailVC.viewController = _viewControllers[1];
@@ -162,13 +150,13 @@
 
 - (void)setTabsViewControllers:(NSArray *)tabsViewControllers {
     
-    _tabsViewControllers = [tabsViewControllers retain];
+    _tabsViewControllers = tabsViewControllers;
     _tabBar.tabsButtons = _tabsViewControllers;
 }
 
 - (void)setActionsButtons:(NSArray *)actionsTabs {
     
-    _actionsButtons = [actionsTabs retain];
+    _actionsButtons = actionsTabs;
     _tabBar.actionsButtons = _actionsButtons;
 }
 

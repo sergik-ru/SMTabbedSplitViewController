@@ -14,15 +14,6 @@
 
 @implementation SMTestDetailViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -31,17 +22,10 @@
 
 - (void)setSiteURL:(NSString *)siteURL {
     
-    _siteURL = siteURL;
-    
-    NSURL *url = [NSURL URLWithString:_siteURL];
+    _siteURL = [siteURL copy];
+    NSURL *url = [NSURL URLWithString:siteURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:requestObj];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
@@ -59,11 +43,5 @@
     
 }
 
-- (void)dealloc {
-    
-    [_webView release];
-    [_siteURL release];
-    [super dealloc];
-}
 
 @end

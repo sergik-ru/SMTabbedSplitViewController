@@ -16,16 +16,6 @@
 
 @implementation SMTestMasterViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    
-    if (self) {
-        
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -35,33 +25,18 @@
 
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)dealloc
-{
-    [_textLabel release];
-    [_buttonNext release];
-    [_imageView release];
-    [_siteURL release];
-    [super dealloc];
-}
-
 - (IBAction)buttonClick:(id)sender {
     
     UINavigationController *nc = (UINavigationController *)[[[UIApplication sharedApplication] delegate] window].rootViewController;
     SMTabbedSplitViewController *split = (SMTabbedSplitViewController *)nc.topViewController;
-    SMTestDetailViewController *detailVC = [[[SMTestDetailViewController alloc] init] autorelease];
+    SMTestDetailViewController *detailVC = [[SMTestDetailViewController alloc] init];
     split.detailViewController = detailVC;
     detailVC.siteURL = _siteURL;
 }
 
 - (void)setSiteURL:(NSString *)siteURL {
     
-    _siteURL = siteURL.copy;
+    _siteURL = [siteURL copy];
     
     NSRange range = [_siteURL rangeOfString:@"www"];
     NSString *site = [_siteURL stringByReplacingCharactersInRange:NSMakeRange(0, range.location) withString:@""];

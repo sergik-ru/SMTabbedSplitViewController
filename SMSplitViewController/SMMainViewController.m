@@ -49,69 +49,67 @@
 
 - (IBAction)buttonClick:(id)sender {
     
-    SMTabbedSplitViewController *split = [[[SMTabbedSplitViewController alloc] initTabbedSplit] autorelease];
+    SMTabbedSplitViewController *split = [[SMTabbedSplitViewController alloc] initTabbedSplit];
     
-    SMTestMasterViewController *tab1VC = [[[SMTestMasterViewController alloc] init] autorelease];
+    SMTestMasterViewController *tab1VC = [[SMTestMasterViewController alloc] init];
     tab1VC.view.backgroundColor = [UIColor colorWithRed:0/255.0 green:127/255.0 blue:237/255.0 alpha:1.0];
-    SMTabBarItem *tab1 = [[[SMTabBarItem alloc] initWithVC:tab1VC image:[UIImage imageNamed:@"Twitter"] andTitle:@"Twitter"] autorelease];
+    SMTabBarItem *tab1 = [[SMTabBarItem alloc] initWithVC:tab1VC image:[UIImage imageNamed:@"Twitter"] andTitle:@"Twitter"];
     tab1.selectedImage = [UIImage imageNamed:@"Twitter_sel"];
     tab1VC.textLabel.text = tab1.title;
     tab1VC.imageView.image = [UIImage imageNamed:@"twitter-logo"];
     tab1VC.siteURL = @"https://www.twitter.com";
     
-    SMTestMasterViewController *tab2VC = [[[SMTestMasterViewController alloc] init] autorelease];
+    SMTestMasterViewController *tab2VC = [[SMTestMasterViewController alloc] init];
     tab2VC.view.backgroundColor = [UIColor colorWithRed:59/255.0 green:89/255.0 blue:152/255.0 alpha:1.0];
-    SMTabBarItem *tab2 = [[[SMTabBarItem alloc] initWithVC:tab2VC image:[UIImage imageNamed:@"Facebook"] andTitle:@"Facebook"] autorelease];
+    SMTabBarItem *tab2 = [[SMTabBarItem alloc] initWithVC:tab2VC image:[UIImage imageNamed:@"Facebook"] andTitle:@"Facebook"];
     tab2.selectedImage = [UIImage imageNamed:@"Facebook_sel"];
     tab2VC.textLabel.text = tab2.title;
     tab2VC.imageView.image = [UIImage imageNamed:@"facebook-logo"];
     tab2VC.siteURL = @"https://www.facebook.com";
     
-    SMTestMasterViewController *tab3VC = [[[SMTestMasterViewController alloc] init] autorelease];
+    SMTestMasterViewController *tab3VC = [[SMTestMasterViewController alloc] init];
     tab3VC.view.backgroundColor = [UIColor colorWithRed:221/255.0 green:75/255.0 blue:57/255.0 alpha:1.0];
-    SMTabBarItem *tab3 = [[[SMTabBarItem alloc] initWithVC:tab3VC image:[UIImage imageNamed:@"Google+"] andTitle:@"Google+"] autorelease];
+    SMTabBarItem *tab3 = [[SMTabBarItem alloc] initWithVC:tab3VC image:[UIImage imageNamed:@"Google+"] andTitle:@"Google+"];
     tab3.selectedImage = [UIImage imageNamed:@"Google+_sel"];
     tab3VC.textLabel.text = tab3.title;
     tab3VC.imageView.image = [UIImage imageNamed:@"googleplus-logo"];
     tab3VC.siteURL = @"https://www.plus.google.com";
     
-    SMTestMasterViewController *tab4VC = [[[SMTestMasterViewController alloc] init] autorelease];
+    SMTestMasterViewController *tab4VC = [[SMTestMasterViewController alloc] init];
     tab4VC.view.backgroundColor = [UIColor colorWithRed:0 green:99/255.0 blue:220/255.0 alpha:1.0];
-    SMTabBarItem *tab4 = [[[SMTabBarItem alloc] initWithVC:tab4VC image:[UIImage imageNamed:@"Flickr"] andTitle:@"Flickr"] autorelease];
+    SMTabBarItem *tab4 = [[SMTabBarItem alloc] initWithVC:tab4VC image:[UIImage imageNamed:@"Flickr"] andTitle:@"Flickr"];
     tab4.selectedImage = [UIImage imageNamed:@"Flickr_sel"];
     tab4VC.textLabel.text = tab4.title;
     tab4VC.imageView.image = [UIImage imageNamed:@"flickr-logo"];
     tab4VC.siteURL = @"http://www.flickr.com";
     
-    SMTestMasterViewController *tab5VC = [[[SMTestMasterViewController alloc] init] autorelease];
+    SMTestMasterViewController *tab5VC = [[SMTestMasterViewController alloc] init];
     tab5VC.view.backgroundColor = [UIColor colorWithRed:255/255.0 green:51/255.0 blue:51/255.0 alpha:1.0];
-    SMTabBarItem *tab5 = [[[SMTabBarItem alloc] initWithVC:tab5VC image:[UIImage imageNamed:@"Youtube"] andTitle:@"Youtube"] autorelease];
+    SMTabBarItem *tab5 = [[SMTabBarItem alloc] initWithVC:tab5VC image:[UIImage imageNamed:@"Youtube"] andTitle:@"Youtube"];
     tab5.selectedImage = [UIImage imageNamed:@"Youtube_sel"];
     tab5VC.textLabel.text = tab5.title;
     tab5VC.imageView.image = [UIImage imageNamed:@"youtube-logo"];
     tab5VC.siteURL = @"https://www.youtube.com";
     
-    SMTestMasterViewController *tab6VC = [[[SMTestMasterViewController alloc] init] autorelease];
+    SMTestMasterViewController *tab6VC = [[SMTestMasterViewController alloc] init];
     tab6VC.view.backgroundColor = [UIColor colorWithRed:76/255.0 green:146/255.0 blue:195/255.0 alpha:1.0];
-    SMTabBarItem *tab6 = [[[SMTabBarItem alloc] initWithVC:tab6VC image:[UIImage imageNamed:@"Linkedin"] andTitle:@"Linkedin"] autorelease];
+    SMTabBarItem *tab6 = [[SMTabBarItem alloc] initWithVC:tab6VC image:[UIImage imageNamed:@"Linkedin"] andTitle:@"Linkedin"];
     tab6.selectedImage = [UIImage imageNamed:@"Linkedin_sel"];
     tab6VC.textLabel.text = tab6.title;
     tab6VC.imageView.image = [UIImage imageNamed:@"linkedin-logo"];
     tab6VC.siteURL = @"http://www.linkedin.com";
     
-    SMTabBarItem *action = [[[SMTabBarItem alloc] initWithActionBlock:^{
+    SMTabBarItem *action = [[SMTabBarItem alloc] initWithActionBlock:^{
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"About" message:@"SMTabbedSplitViewController by Marchukov Sergey" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
-        [alert release];
-    } image:[UIImage imageNamed:@"info"] andTitle:@"About"] autorelease];
+    } image:[UIImage imageNamed:@"info"] andTitle:@"About"];
     
-    SMTabBarItem *action2 = [[[SMTabBarItem alloc] initWithActionBlock:^{
+    SMTabBarItem *action2 = [[SMTabBarItem alloc] initWithActionBlock:^{
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Exit message" message:@"Do you really want to quit?" delegate:self cancelButtonTitle:@"YES" otherButtonTitles:@"NO", nil];
         [alert show];
-        [alert release];
-    } image:[UIImage imageNamed:@"exit"] andTitle:@"Exit"] autorelease];
+    } image:[UIImage imageNamed:@"exit"] andTitle:@"Exit"];
     
     split.tabsViewControllers = @[tab1, tab2, tab3, tab4, tab5, tab6];
     split.actionsButtons = @[action, action2];
@@ -129,8 +127,4 @@
     }
 }
 
-- (void)dealloc {
-    [_btn_openSplit release];
-    [super dealloc];
-}
 @end

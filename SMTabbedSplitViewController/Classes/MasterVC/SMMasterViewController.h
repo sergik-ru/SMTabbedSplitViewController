@@ -12,7 +12,7 @@
 
 @interface SMMasterViewController : UIViewController
 
-@property (nonatomic, retain) UIViewController *viewController;
+@property (nonatomic, strong) UIViewController *viewController;
 
 - (id)initWithFrame:(CGRect)frame;
 

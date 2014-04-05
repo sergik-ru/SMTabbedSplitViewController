@@ -15,10 +15,10 @@ typedef void (^ActionBlock)(void);
 @interface SMTabBarItem : NSObject
 
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, strong) UIImage *image;
 @property (nonatomic, copy) ActionBlock actionBlock;
-@property (nonatomic, retain) UIViewController *viewController;
-@property (nonatomic, retain) UIImage *selectedImage;
+@property (nonatomic, strong) UIViewController *viewController;
+@property (nonatomic, strong) UIImage *selectedImage;
 
 - (id)initWithVC:(UIViewController *)vc image:(UIImage *)image andTitle:(NSString *)title;
 - (id)initWithActionBlock:(ActionBlock)actionBlock image:(UIImage *)image andTitle:(NSString *)title;

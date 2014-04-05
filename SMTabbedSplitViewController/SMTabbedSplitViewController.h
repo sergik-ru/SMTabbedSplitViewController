@@ -28,13 +28,13 @@ typedef enum {
     BOOL _masterIsHidden;
 }
 
-@property (nonatomic, readonly, retain) SMTabBar *tabBar;
-@property (nonatomic, assign) UIColor *background;
-@property (nonatomic, retain) NSArray *tabsViewControllers;
-@property (nonatomic, retain) NSArray *actionsButtons;
-@property (nonatomic, retain) NSArray *viewControllers;
-@property (nonatomic, readonly, assign) UIViewController *masterViewController;
-@property (nonatomic, assign) UIViewController *detailViewController;
+@property (nonatomic, readonly, strong) SMTabBar *tabBar;
+@property (nonatomic, weak) UIColor *background;
+@property (nonatomic, strong) NSArray *tabsViewControllers;
+@property (nonatomic, strong) NSArray *actionsButtons;
+@property (nonatomic, strong) NSArray *viewControllers;
+@property (nonatomic, readonly, weak) UIViewController *masterViewController;
+@property (nonatomic, weak) UIViewController *detailViewController;
 @property (nonatomic) SMSplitType splitType;
 
 - (id)initTabbedSplit;

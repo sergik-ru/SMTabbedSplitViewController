@@ -20,18 +20,18 @@
         
         self.backgroundColor = [UIColor clearColor];
         
-        _iconView = [[[UIImageView alloc] init] autorelease];
+        _iconView = [[UIImageView alloc] init];
         _iconView.contentMode = UIViewContentModeCenter;
         [self addSubview:_iconView];
         
-        _titleLabel = [[[UILabel alloc] init] autorelease];
+        _titleLabel = [[UILabel alloc] init];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.backgroundColor = [UIColor clearColor];
         _titleLabel.font = [UIFont boldSystemFontOfSize:10];
         _titleLabel.textColor = [UIColor whiteColor];
         [self addSubview:_titleLabel];
         
-        _selectedColor = [[UIColor colorWithWhite:0.85f alpha:1.0f] retain];
+        _selectedColor = [UIColor colorWithWhite:0.85f alpha:1.0f];
     }
     return self;
 }
@@ -52,7 +52,7 @@
 
 - (void)setImage:(UIImage *)image {
     
-    _image = [image retain];
+    _image = image;
 }
 
 - (void)setIsFirstCell:(BOOL)isFirstCell {
@@ -61,7 +61,7 @@
     
     if (isFirstCell) {
         
-        _topSeparator = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 1)] autorelease];
+        _topSeparator = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 1)];
         _topSeparator.backgroundColor = [UIColor blackColor];
         [self addSubview:_topSeparator];
     }
@@ -73,7 +73,7 @@
     
     if (_cellType == SMTabBarItemCellTab) {
         
-        _separator = [[[UIView alloc] init] autorelease];
+        _separator = [[UIView alloc] init];
         _separator.backgroundColor = [UIColor blackColor];
         [self addSubview:_separator];
     }
@@ -85,7 +85,7 @@
     
     if (_cellType == SMTabBarItemCellTab) {
         
-        _viewBackground = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height - 1)] autorelease];
+        _viewBackground = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height - 1)];
         _viewBackground.backgroundColor = highlighted ? _selectedColor : [UIColor clearColor];
         self.backgroundView = _viewBackground;
         
@@ -115,14 +115,5 @@
     _iconView.image = selected ? _selectedImage : _image;
 }
 
-- (void)dealloc {
-    
-    [_image release];
-    [_selectedImage release];
-    [_selectedColor release];
-    [_actionBlock release];
-    
-    [super dealloc];
-}
 
 @end

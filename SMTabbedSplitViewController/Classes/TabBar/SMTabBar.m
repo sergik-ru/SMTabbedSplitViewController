@@ -20,8 +20,8 @@
 
 @interface SMTabBar ()
 
-@property (nonatomic, retain) UITableView *tabsTable;
-@property (nonatomic, retain) UITableView *actionsTable;
+@property (nonatomic, strong) UITableView *tabsTable;
+@property (nonatomic, strong) UITableView *actionsTable;
 
 @end
 
@@ -62,7 +62,7 @@
             }
         }];
         
-        _tabsButtons = [[NSArray arrayWithArray:tmpItems] retain];
+        _tabsButtons = [NSArray arrayWithArray:tmpItems];
         
         _tabsTable = [[UITableView alloc] initWithFrame:tabsButtonsFrame style:UITableViewStylePlain];
         _tabsTable.scrollEnabled = NO;
@@ -71,7 +71,7 @@
         
         _tabsTable.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tabsTable.backgroundColor = [UIColor clearColor];
-        _tabsTable.tableFooterView = [[[UIView alloc] init] autorelease];
+        _tabsTable.tableFooterView = [[UIView alloc] init];
         
         if (_tabsButtons.count > 0) {
             
@@ -100,7 +100,7 @@
             }
         }];
         
-        _actionsButtons = [[NSArray arrayWithArray:tmpItems] retain];
+        _actionsButtons = [NSArray arrayWithArray:tmpItems];
         
         _actionsTable = [[UITableView alloc] initWithFrame:actionButtonFrame style:UITableViewStylePlain];
         _actionsTable.scrollEnabled = NO;
@@ -109,7 +109,7 @@
         _actionsTable.dataSource = self;
         
         _actionsTable.backgroundColor = [UIColor clearColor];
-        _actionsTable.tableFooterView = [[[UIView alloc] init] autorelease];
+        _actionsTable.tableFooterView = [[UIView alloc] init];
         
         [self.view addSubview:_actionsTable];
     }
@@ -134,17 +134,6 @@
     }
 }
 
-- (void)dealloc {
-    
-    [_tabsTable release];
-    [_actionsTable release];
-    [_selectedTab release];
-    
-    [_tabsButtons release];
-    [_actionsButtons release];
-    
-    [super dealloc];
-}
 
 #pragma mark -
 #pragma mark - Properties
@@ -191,7 +180,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SMTabBarItemCell *cell = [[[SMTabBarItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil] autorelease];
+    SMTabBarItemCell *cell = [[SMTabBarItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     
     SMTabBarItem *tabItem = nil;
     
@@ -225,7 +214,7 @@
         
         if (![_selectedTab isEqual:indexPath]) {
             
-            [_selectedTab autorelease], _selectedTab = indexPath.copy;
+            _selectedTab = indexPath.copy;
             _selectedTabIndex = [indexPath row];
             SMTabBarItemCell *cell = (SMTabBarItemCell *)[tableView cellForRowAtIndexPath:indexPath];
             [self.delegate tabBar:self selectedViewController:cell.viewController];

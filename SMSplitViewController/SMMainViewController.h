@@ -10,7 +10,7 @@
 
 @interface SMMainViewController : UIViewController
 
-@property (retain, nonatomic) IBOutlet UIButton *btn_openSplit;
+@property (strong, nonatomic) IBOutlet UIButton *btn_openSplit;
 
 - (IBAction)buttonClick:(id)sender;
 
