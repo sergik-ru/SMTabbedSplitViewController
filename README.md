@@ -28,7 +28,7 @@ Installation
 
 SMTabbedSplitViewController can be installed via CocoaPods. Simply add
 ```
-pod 'SMTabbedSplitViewController', '>= 1.0.1'
+pod 'SMTabbedSplitViewController', '>= 1.0.2'
 ```
 to your Podfile. 
 
