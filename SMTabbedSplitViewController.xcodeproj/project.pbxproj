@@ -14,11 +14,6 @@
 		41A8B39918AF81A70095B154 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B39818AF81A70095B154 /* main.m */; };
 		41A8B39D18AF81A70095B154 /* SMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B39C18AF81A70095B154 /* SMAppDelegate.m */; };
 		41A8B39F18AF81A70095B154 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A8B39E18AF81A70095B154 /* Images.xcassets */; };
-		41A8B3A618AF81A70095B154 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A8B3A518AF81A70095B154 /* XCTest.framework */; };
-		41A8B3A718AF81A70095B154 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A8B38C18AF81A70095B154 /* Foundation.framework */; };
-		41A8B3A818AF81A70095B154 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A8B39018AF81A70095B154 /* UIKit.framework */; };
-		41A8B3B018AF81A70095B154 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41A8B3AE18AF81A70095B154 /* InfoPlist.strings */; };
-		41A8B3B218AF81A70095B154 /* SMSplitViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3B118AF81A70095B154 /* SMSplitViewControllerTests.m */; };
 		41A8B3D518B2A22C0095B154 /* SMTestMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3D318B2A22C0095B154 /* SMTestMasterViewController.m */; };
 		41A8B3D618B2A22C0095B154 /* SMTestMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A8B3D418B2A22C0095B154 /* SMTestMasterViewController.xib */; };
 		41A8B3E118B547E70095B154 /* SMTestDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8B3DF18B547E70095B154 /* SMTestDetailViewController.m */; };
@@ -33,16 +28,6 @@
 		41E97AFE18CE391300F48742 /* SMTabbedSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E97AF818CE391300F48742 /* SMTabbedSplitViewController.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		41A8B3A918AF81A70095B154 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 41A8B38118AF81A70095B154 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 41A8B38818AF81A70095B154;
-			remoteInfo = SMSplitViewController;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		41A8B38918AF81A70095B154 /* SMTabbedSplitViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMTabbedSplitViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A8B38C18AF81A70095B154 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -54,11 +39,7 @@
 		41A8B39B18AF81A70095B154 /* SMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMAppDelegate.h; sourceTree = "<group>"; };
 		41A8B39C18AF81A70095B154 /* SMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMAppDelegate.m; sourceTree = "<group>"; };
 		41A8B39E18AF81A70095B154 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		41A8B3A418AF81A70095B154 /* SMTabbedSplitViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SMTabbedSplitViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A8B3A518AF81A70095B154 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		41A8B3AD18AF81A70095B154 /* SMTabbedSplitViewControllerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SMTabbedSplitViewControllerTests-Info.plist"; sourceTree = "<group>"; };
-		41A8B3AF18AF81A70095B154 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		41A8B3B118AF81A70095B154 /* SMSplitViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMSplitViewControllerTests.m; sourceTree = "<group>"; };
 		41A8B3D218B2A22C0095B154 /* SMTestMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTestMasterViewController.h; sourceTree = "<group>"; };
 		41A8B3D318B2A22C0095B154 /* SMTestMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTestMasterViewController.m; sourceTree = "<group>"; };
 		41A8B3D418B2A22C0095B154 /* SMTestMasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMTestMasterViewController.xib; sourceTree = "<group>"; };
@@ -93,16 +74,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		41A8B3A118AF81A70095B154 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				41A8B3A618AF81A70095B154 /* XCTest.framework in Frameworks */,
-				41A8B3A818AF81A70095B154 /* UIKit.framework in Frameworks */,
-				41A8B3A718AF81A70095B154 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -111,7 +82,6 @@
 			children = (
 				41E97AE718CE391300F48742 /* SMTabbedSplitViewController */,
 				41A8B39218AF81A70095B154 /* ExampleApp */,
-				41A8B3AB18AF81A70095B154 /* SMTabbedSplitViewControllerTests */,
 				41A8B38B18AF81A70095B154 /* Frameworks */,
 				41A8B38A18AF81A70095B154 /* Products */,
 			);
@@ -121,7 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				41A8B38918AF81A70095B154 /* SMTabbedSplitViewController.app */,
-				41A8B3A418AF81A70095B154 /* SMTabbedSplitViewControllerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,25 +125,6 @@
 				41A8B39518AF81A70095B154 /* InfoPlist.strings */,
 				41A8B39818AF81A70095B154 /* main.m */,
 				41A8B39A18AF81A70095B154 /* SMTabbedSplitViewController-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		41A8B3AB18AF81A70095B154 /* SMTabbedSplitViewControllerTests */ = {
-			isa = PBXGroup;
-			children = (
-				41A8B3B118AF81A70095B154 /* SMSplitViewControllerTests.m */,
-				41A8B3AC18AF81A70095B154 /* Supporting Files */,
-			);
-			name = SMTabbedSplitViewControllerTests;
-			path = SMSplitViewControllerTests;
-			sourceTree = "<group>";
-		};
-		41A8B3AC18AF81A70095B154 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				41A8B3AD18AF81A70095B154 /* SMTabbedSplitViewControllerTests-Info.plist */,
-				41A8B3AE18AF81A70095B154 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -290,24 +240,6 @@
 			productReference = 41A8B38918AF81A70095B154 /* SMTabbedSplitViewController.app */;
 			productType = "com.apple.product-type.application";
 		};
-		41A8B3A318AF81A70095B154 /* SMTabbedSplitViewControllerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 41A8B3B818AF81A70095B154 /* Build configuration list for PBXNativeTarget "SMTabbedSplitViewControllerTests" */;
-			buildPhases = (
-				41A8B3A018AF81A70095B154 /* Sources */,
-				41A8B3A118AF81A70095B154 /* Frameworks */,
-				41A8B3A218AF81A70095B154 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				41A8B3AA18AF81A70095B154 /* PBXTargetDependency */,
-			);
-			name = SMTabbedSplitViewControllerTests;
-			productName = SMSplitViewControllerTests;
-			productReference = 41A8B3A418AF81A70095B154 /* SMTabbedSplitViewControllerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -317,11 +249,6 @@
 				CLASSPREFIX = SM;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Sergey Marchukov";
-				TargetAttributes = {
-					41A8B3A318AF81A70095B154 = {
-						TestTargetID = 41A8B38818AF81A70095B154;
-					};
-				};
 			};
 			buildConfigurationList = 41A8B38418AF81A70095B154 /* Build configuration list for PBXProject "SMTabbedSplitViewController" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -336,7 +263,6 @@
 			projectRoot = "";
 			targets = (
 				41A8B38818AF81A70095B154 /* SMTabbedSplitViewController */,
-				41A8B3A318AF81A70095B154 /* SMTabbedSplitViewControllerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -351,14 +277,6 @@
 				41A8B39F18AF81A70095B154 /* Images.xcassets in Resources */,
 				41A8B3D618B2A22C0095B154 /* SMTestMasterViewController.xib in Resources */,
 				41E97ACE18C8FCBD00F48742 /* SMMainViewController.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41A8B3A218AF81A70095B154 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				41A8B3B018AF81A70095B154 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,37 +301,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		41A8B3A018AF81A70095B154 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				41A8B3B218AF81A70095B154 /* SMSplitViewControllerTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		41A8B3AA18AF81A70095B154 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 41A8B38818AF81A70095B154 /* SMTabbedSplitViewController */;
-			targetProxy = 41A8B3A918AF81A70095B154 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		41A8B39518AF81A70095B154 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				41A8B39618AF81A70095B154 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		41A8B3AE18AF81A70095B154 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				41A8B3AF18AF81A70095B154 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -525,48 +419,6 @@
 			};
 			name = Release;
 		};
-		41A8B3B918AF81A70095B154 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SMSplitViewController.app/SMSplitViewController";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SMSplitViewController/SMSplitViewController-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "SMSplitViewControllerTests/SMTabbedSplitViewControllerTests-Info.plist";
-				PRODUCT_NAME = SMTabbedSplitViewControllerTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		41A8B3BA18AF81A70095B154 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SMSplitViewController.app/SMSplitViewController";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SMSplitViewController/SMSplitViewController-Prefix.pch";
-				INFOPLIST_FILE = "SMSplitViewControllerTests/SMTabbedSplitViewControllerTests-Info.plist";
-				PRODUCT_NAME = SMTabbedSplitViewControllerTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -584,15 +436,6 @@
 			buildConfigurations = (
 				41A8B3B618AF81A70095B154 /* Debug */,
 				41A8B3B718AF81A70095B154 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		41A8B3B818AF81A70095B154 /* Build configuration list for PBXNativeTarget "SMTabbedSplitViewControllerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				41A8B3B918AF81A70095B154 /* Debug */,
-				41A8B3BA18AF81A70095B154 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
