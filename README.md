@@ -13,6 +13,7 @@ Main features:
 
 Version History
 ----------
+- 1.0.2 - Converted to ARC
 - 1.0.1 - Example App Redisign
 - 1.0 - Initial Version
 
@@ -20,7 +21,7 @@ Requirements
 --------------
 
 * Made to work with iOS 6+.
-* This project doesn't use ARC, you can convert it to ARC through XCode (Edit -> Refactor -> Convert to Objective-C ARC)
+* ARC (1.0.2) and under ARC (1.0.1)
 
 Installation
 --------------
@@ -42,15 +43,15 @@ Then, subclass SMTabbedSplitViewController and override -init
 or create instance of SMTabbedSplitViewController
 
 ```
-SMTabbedSplitViewController *split = [[[SMTabbedSplitViewController alloc] initTabbedSplit] autorelease];
+SMTabbedSplitViewController *split = [[SMTabbedSplitViewController alloc] initTabbedSplit];
 ```
 Use constructor -initTabbedSplit for create split with tabbar and -initSplit for create split without tabbar (default -init method called -initTabbedSplit) 
 
 For create tabbar tabs you must create instance of view controller for this tab and use it when creating an object SMTabBarItem (also you can customize this tab item)
 ```
-SMTestMasterViewController *tab1VC = [[[SMTestMasterViewController alloc] init] autorelease];
+SMTestMasterViewController *tab1VC = [[SMTestMasterViewController alloc] init];
 tab1VC.view.backgroundColor = [UIColor colorWithRed:0/255.0 green:127/255.0 blue:237/255.0 alpha:1.0];
-SMTabBarItem *tab1 = [[[SMTabBarItem alloc] initWithVC:tab1VC image:[UIImage imageNamed:@"Twitter"] andTitle:@"Twitter"] autorelease];
+SMTabBarItem *tab1 = [[SMTabBarItem alloc] initWithVC:tab1VC image:[UIImage imageNamed:@"Twitter"] andTitle:@"Twitter"];
 tab1.selectedImage = [UIImage imageNamed:@"Twitter_sel"];
 ```
 and set a tabsViewControllers property
@@ -59,11 +60,10 @@ split.tabsViewControllers = @[tab1, tab2, tab3, tab4, tab5, tab6];
 ```
 For create actions buttons you must create SMTabBarItem with another constructor accepts action block instead of the view controller (like create tabs)
 ```
-SMTabBarItem *action = [[[SMTabBarItem alloc] initWithActionBlock:^{  
+SMTabBarItem *action = [[SMTabBarItem alloc] initWithActionBlock:^{  
 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"About" message:@"SMTabbedSplitViewController by Marchukov Sergey" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 [alert show];
-[alert release];
-} image:[UIImage imageNamed:@"info"] andTitle:@"About"] autorelease];
+} image:[UIImage imageNamed:@"info"] andTitle:@"About"];
 ```
 and set a tabsActions property
 ```
