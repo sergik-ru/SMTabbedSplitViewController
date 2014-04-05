@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SMTabbedSplitViewController"
-  s.version      = «1.0.2»
+  s.version      = "1.0.2"
   s.summary      = "Tabbed Split View Controller for iPad"
 
   s.description  = <<-DESC
