@@ -31,7 +31,7 @@
     SMTabbedSplitViewController *split = (SMTabbedSplitViewController *)nc.topViewController;
     SMTestDetailViewController *detailVC = [[SMTestDetailViewController alloc] init];
     split.detailViewController = detailVC;
-    detailVC.siteURL = _siteURL;
+    detailVC.siteURL = [NSURL URLWithString:_siteURL];
 }
 
 - (void)setSiteURL:(NSString *)siteURL {
@@ -39,8 +39,8 @@
     _siteURL = [siteURL copy];
     
     NSRange range = [_siteURL rangeOfString:@"www"];
-    NSString *site = [_siteURL stringByReplacingCharactersInRange:NSMakeRange(0, range.location) withString:@""];
-    NSString *title = [NSString stringWithFormat:@"Open %@", site];
+    NSString *siteName = [_siteURL stringByReplacingCharactersInRange:NSMakeRange(0, range.location) withString:@""];
+    NSString *title = [NSString stringWithFormat:@"Open %@", siteName];
     [self.buttonNext setTitle:title forState:UIControlStateNormal];
 }
 

@@ -11,6 +11,6 @@
 @interface SMTestDetailViewController : UIViewController <UIWebViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
-@property (nonatomic, copy) NSString *siteURL;
+@property (nonatomic) NSURL *siteURL;
 
 @end

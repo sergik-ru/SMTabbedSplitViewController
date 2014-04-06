@@ -17,14 +17,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.webView.delegate = self;
 }
 
-- (void)setSiteURL:(NSString *)siteURL {
+- (void)setSiteURL:(NSURL *)siteURL {
     
-    _siteURL = [siteURL copy];
-    NSURL *url = [NSURL URLWithString:siteURL];
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    _siteURL = siteURL;
+    
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:_siteURL];
     [self.webView loadRequest:requestObj];
 }
 
