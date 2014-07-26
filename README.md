@@ -13,6 +13,7 @@ Main features:
 
 Version History
 ----------
+- 1.0.3 - iOS 8 & some others fixes
 - 1.0.2 - Converted to ARC
 - 1.0.1 - Example App Redisign
 - 1.0 - Initial Version
@@ -21,14 +22,14 @@ Requirements
 --------------
 
 * Made to work with iOS 6+.
-* ARC (1.0.2) and under ARC (1.0.1)
+* ARC (1.0.2+) and under ARC (1.0.1)
 
 Installation
 --------------
 
 SMTabbedSplitViewController can be installed via CocoaPods. Simply add
 ```
-pod 'SMTabbedSplitViewController', '>= 1.0.2'
+pod 'SMTabbedSplitViewController', '>= 1.0.3’
 ```
 to your Podfile. 
 

@@ -7,7 +7,7 @@
 //
 //  This content is released under the ( http://opensource.org/licenses/MIT ) MIT License.
 //  Repository: https://github.com/sergik-ru/SMTabbedSplitViewController
-//  Version 1.0.2
+//  Version 1.0.3
 //
 
 #import "SMTabbedSplitViewController.h"
