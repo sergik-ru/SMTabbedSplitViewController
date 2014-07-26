@@ -35,10 +35,6 @@
 }
 
 #pragma mark -
-#pragma mark - ViewController Lifecycle
-
-
-#pragma mark -
 #pragma mark - Properties
 
 - (void)setViewController:(UIViewController *)viewController {

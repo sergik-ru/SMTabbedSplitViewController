@@ -10,6 +10,14 @@
 
 #import "SMTabBarItemCell.h"
 
+@interface SMTabBarItemCell ()
+{
+    UIView *_topSeparator;
+    UIView *_separator;
+    UIView *_viewBackground;
+}
+@end
+
 @implementation SMTabBarItemCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier

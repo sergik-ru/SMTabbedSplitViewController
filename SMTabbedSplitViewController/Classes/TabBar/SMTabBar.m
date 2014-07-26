@@ -13,12 +13,17 @@
 #import "SMTabBarItemCell.h"
 
 #define iOS_7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
-#define tabBarWidth 70
-#define tabItemHeight 60
+static const NSInteger tabBarWidth = 70;
+static const NSInteger tabItemHeight = 60;
 #define tabsButtonsFrame CGRectMake(0, 10 + iOS_7 * 20, tabBarWidth, _tabsButtonsHeight)
 #define actionButtonFrame CGRectMake(0, self.view.frame.size.height - _actionsButtonsHeight + iOS_7 * 20 - tabItemHeight / 2 * iOS_7 - 10 * !iOS_7, tabBarWidth, _actionsButtonsHeight)
 
-@interface SMTabBar ()
+@interface SMTabBar () <UITableViewDelegate, UITableViewDataSource>
+{
+    CGFloat _tabsButtonsHeight;
+    CGFloat _actionsButtonsHeight;
+    NSIndexPath *_selectedTab;
+}
 
 @property (nonatomic, strong) UITableView *tabsTable;
 @property (nonatomic, strong) UITableView *actionsTable;
@@ -26,11 +31,6 @@
 @end
 
 @implementation SMTabBar
-{
-    __block CGFloat _tabsButtonsHeight;
-    __block CGFloat _actionsButtonsHeight;
-    NSIndexPath *_selectedTab;
-}
 
 #pragma mark -
 #pragma mark - Initialization
@@ -114,6 +114,7 @@
         [self.view addSubview:_actionsTable];
     }
 }
+
 #pragma mark -
 #pragma mark - ViewController Lifecycle
 
@@ -132,8 +133,12 @@
         
         _actionsTable.frame = actionButtonFrame;
     }
+    
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+        
+        [_tabsTable selectRowAtIndexPath:[NSIndexPath indexPathForRow:_selectedTabIndex inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
+    }
 }
-
 
 #pragma mark -
 #pragma mark - Properties
@@ -214,7 +219,7 @@
         
         if (![_selectedTab isEqual:indexPath]) {
             
-            _selectedTab = indexPath.copy;
+            _selectedTab = [indexPath copy];
             _selectedTabIndex = [indexPath row];
             SMTabBarItemCell *cell = (SMTabBarItemCell *)[tableView cellForRowAtIndexPath:indexPath];
             [self.delegate tabBar:self selectedViewController:cell.viewController];
@@ -225,6 +230,7 @@
         [tableView deselectRowAtIndexPath:indexPath animated:NO];
         [_tabsTable selectRowAtIndexPath:_selectedTab animated:NO scrollPosition:UITableViewScrollPositionNone];
         SMTabBarItemCell *selectedCell = (SMTabBarItemCell *)[tableView cellForRowAtIndexPath:indexPath];
+        
         if (selectedCell.actionBlock)
             selectedCell.actionBlock();
     }

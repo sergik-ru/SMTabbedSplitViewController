@@ -7,12 +7,21 @@
 //
 //  This content is released under the ( http://opensource.org/licenses/MIT ) MIT License.
 //  Repository: https://github.com/sergik-ru/SMTabbedSplitViewController
-//  Version 1.0.1
+//  Version 1.0.2
 //
 
 #import "SMTabbedSplitViewController.h"
 #import "SMMasterViewController.h"
 #import "SMDetailViewController.h"
+#import "SMTabBar.h"
+
+@interface SMTabbedSplitViewController () <SMTabBarDelegate>
+{
+    SMMasterViewController *_masterVC;
+    SMDetailViewController *_detailVC;
+    BOOL _masterIsHidden;
+}
+@end
 
 @implementation SMTabbedSplitViewController
 
@@ -90,12 +99,15 @@
     BOOL tabBarIsShowed = (_splitType == SMTabbedSplt);
     CGRect appFrame = [UIScreen mainScreen].applicationFrame;
     
-    CGRect detailFrame = [self detailVCFrame];
-    CGFloat widthDif = UIInterfaceOrientationIsPortrait(self.interfaceOrientation) ? 10 : 0;
-    detailFrame.origin.x -= widthDif;
-    detailFrame.size.width = UIInterfaceOrientationIsPortrait(self.interfaceOrientation) ? appFrame.size.width - (70 * tabBarIsShowed) - 310 - 1 : appFrame.size.height - (70 * tabBarIsShowed) - 320 - 1;
+    BOOL isPortrait = UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation);
+    BOOL iOSVersionLowerThan8 = [[[UIDevice currentDevice] systemVersion] floatValue] < 8.0;
     
+    CGRect detailFrame = [self detailVCFrame];
+    CGFloat widthDif = isPortrait ? 10 : 0;
+    detailFrame.origin.x -= widthDif;
+    detailFrame.size.width = isPortrait ? appFrame.size.width - (70 * tabBarIsShowed) - 310 - 1 : (iOSVersionLowerThan8 ? appFrame.size.height : appFrame.size.width)- (70 * tabBarIsShowed) - 320 - 1;
     _detailVC.view.frame = detailFrame;
+    
     CGRect masterFrame = [self masterVCFrame];
     masterFrame.size.width -= widthDif;
     _masterVC.view.frame = masterFrame;

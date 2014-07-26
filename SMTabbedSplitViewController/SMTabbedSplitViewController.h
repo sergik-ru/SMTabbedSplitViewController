@@ -7,26 +7,20 @@
 //
 //  This content is released under the ( http://opensource.org/licenses/MIT ) MIT License.
 //  Repository: https://github.com/sergik-ru/SMTabbedSplitViewController
-//  Version 1.0.1
+//  Version 1.0.2
 //
 
 #import <UIKit/UIKit.h>
-#import "SMTabBar.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, SMSplitType) {
     
-    SMTabbedSplt = 0,
+    SMTabbedSplt,
     SMDefaultSplit
-} SMSplitType;
+};
 
-@class SMMasterViewController, SMDetailViewController;
+@class SMTabBar;
 
-@interface SMTabbedSplitViewController : UIViewController <SMTabBarDelegate>
-{
-    SMMasterViewController *_masterVC;
-    SMDetailViewController *_detailVC;
-    BOOL _masterIsHidden;
-}
+@interface SMTabbedSplitViewController : UIViewController
 
 @property (nonatomic, readonly, strong) SMTabBar *tabBar;
 @property (nonatomic, weak) UIColor *background;

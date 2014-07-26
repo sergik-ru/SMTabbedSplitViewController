@@ -37,11 +37,12 @@
     
     if (self) {
         
-        self.actionBlock = actionBlock ? actionBlock : ^{
+        ActionBlock block = actionBlock ? actionBlock : ^{
             
             NSLog(@"ActionBlock is nil!");
         };
-        
+
+        _actionBlock = [block copy];
         _image = image;
         _title = [title copy];
     }

@@ -9,20 +9,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SMTabBarItem.h"
 
-typedef enum {
+typedef  NS_ENUM(NSUInteger, SMTabBarItemCellType) {
     
     SMTabBarItemCellTab,
     SMTabBarItemCellAction
-} SMTabBarItemCellType;
+};
 
 @interface SMTabBarItemCell : UITableViewCell
-{
-    UIView *_topSeparator;
-    UIView *_separator;
-    UIView *_viewBackground;
-}
 
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIImageView *iconView;
@@ -30,7 +24,7 @@ typedef enum {
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) UIImage *selectedImage;
 @property (nonatomic, strong) UIColor *selectedColor;
-@property (nonatomic, copy) ActionBlock actionBlock;
+@property (nonatomic, copy) void (^actionBlock)(void);
 @property (nonatomic) SMTabBarItemCellType cellType;
 @property (nonatomic) BOOL isFirstCell;
 
